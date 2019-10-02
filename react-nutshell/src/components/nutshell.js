@@ -1,6 +1,6 @@
 import React, {Component} from "react"
-import NavBar from "./nav/NavBar.js"
-import ApplicationViews from "./ApplicationViews.js"
+import NavBar from "./navbar/NavBar"
+import ApplicationViews from "./ApplicationViews"
 // import "./nutshell.css"
 class Nutshell extends Component {
  render() {
