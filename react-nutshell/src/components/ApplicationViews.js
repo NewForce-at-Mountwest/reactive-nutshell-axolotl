@@ -16,7 +16,13 @@ class ApplicationViews extends Component {
             return <Home />;
           }}
         />
-        <Route path="/login" component={Login} />
+        <Route
+          path="/events"
+          render={props => {
+            return <EventList {...props} />;
+          }}
+        />
+        {/* <Route path="/login" component={Login} /> */}
       </React.Fragment>
     );
   }
