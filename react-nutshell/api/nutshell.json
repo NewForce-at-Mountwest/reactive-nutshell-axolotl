@@ -1,9 +1,22 @@
 {
     "tasks":[
+    {"id": 1,
+    "userId": 3,
+    "task": "Take out garbage"
+    },
     {
-
+    "id": 2,
+    "userId": 3,
+    "task": "Roll in the Garbage"
+    },
+    {
+        "id": 3,
+        "userId": 3,
+        "task": "Eat the Garbage"
     }
 ],
+
+
 "news": [
 
 ],
