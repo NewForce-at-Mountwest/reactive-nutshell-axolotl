@@ -1,0 +1,20 @@
+.card {
+    width: 50vw;
+    margin: 1em
+}
+.section-content{
+    display: flex;
+    align-content: center
+}
+/* styling for new event button */
+#new-event {
+    margin: 1em
+}
+/* styling for edit event button */
+#edit-btn {
+    margin: 1em
+}
+/* styling for delete event button */
+#delete-btn {
+    margin: 1em
+}

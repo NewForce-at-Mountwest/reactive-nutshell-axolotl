@@ -24,5 +24,10 @@ update(editedEvent)  {
     },
     body: JSON.stringify(editedEvent)
   }).then(data => data.json());
-}
+},
+delete(id) {
+  return fetch(`${remoteURL}/events/${id}`, {
+    method: "DELETE"})
+    .then(result => result.json())
+  }
 }

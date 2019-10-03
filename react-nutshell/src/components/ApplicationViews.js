@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Home from "./home/Home";
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
+import EventEditForm from "./events/EventEditForm";
 
 
 class ApplicationViews extends Component {
@@ -29,6 +30,12 @@ class ApplicationViews extends Component {
           path="/events/new"
           render={props => {
             return <EventForm {...props} />;
+          }}
+        />
+        <Route
+          path="/events/:eventId(\d+)/edit"
+          render={props => {
+            return <EventEditForm {...props} />;
           }}
         />
         {/* <Route path="/login" component={Login} /> */}
