@@ -5,7 +5,7 @@ class EventCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <h3>Event Name: <span className="card-event">{this.props.event.name}</span></h3>
+          <h3>Event Name: <span className="card-event">{this.props.event.event}</span></h3>
           <p>Date: {this.props.event.date}</p>
         </div>
       </div>
