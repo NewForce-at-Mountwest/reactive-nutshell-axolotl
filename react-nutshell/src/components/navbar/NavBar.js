@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {withRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar, Nav, NavItem,} from "react-bootstrap";
-
+import {Navbar, Nav, } from "react-bootstrap";
+// NavItem,
 class NavBar extends Component {
     // method to change link color upon active link
     changeLinkColor = pathname => {

@@ -1,13 +1,16 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
+// Redirect
 import React, { Component } from "react";
 import Home from "./home/Home";
 import TaskList from "./tasks/TaskList";
 import TaskCard from "./tasks/TaskCard";
 import TaskForm from "./tasks/TaskForm";
 import TaskEditForm from "./tasks/TaskEditForm";
+import NewsList from "./news/NewsList";
+import NewsForm from "./news/NewsForm";
+import NewsEditForm from "./news/NewsEditForm";
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
-
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
@@ -51,6 +54,37 @@ class ApplicationViews extends Component {
               />
           }}
         />
+        {/* <Route path="/login" component={Login} /> */}
+
+        {/* News Routes */}
+        <Route
+          exact
+          path="/news"
+          render={props => {
+            return <NewsList {...props} />;
+          }}
+          // render={props => {
+          //   if (this.isAuthenticated()) {
+          //     return <NewsList {...props} />;
+          //   } else {
+          //     return <Redirect to="/login" />;
+          //   }
+          // }}
+        />
+        <Route
+          exact
+          path="/news/new"
+          render={props => {
+            return <NewsForm {...props} />;
+          }}
+          // render={props => {
+          //   return this.isAuthenticated() ? (
+          //     <NewsForm {...props} />
+          //   ) : (
+          //     <Redirect to="/login" />
+          //   );
+          // }}
+        />
         <Route
           exact
           path="/tasks"
@@ -61,7 +95,14 @@ class ApplicationViews extends Component {
               />
 
               <Route
-          exact path="/events"
+          exact path="/news/:newsId(\d+)/edit"
+          render={props => {
+            return <NewsEditForm {...props} />;
+          }}
+        />
+        <Route
+          exact
+          path="/events"
           render={props => {
             return <EventList {...props} />;
           }}
