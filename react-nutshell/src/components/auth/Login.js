@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-
+import { Link } from "react-router-dom";
 class Login extends Component {
 
   // Set initial state
   state = {
-    email: "",
+    username: "",
     password: "",
     remember: false
   }
@@ -29,14 +29,14 @@ class Login extends Component {
   handleLogin = (e) => {
     e.preventDefault()
     /*
-        For now, just store the email and password that
+        For now, just store the username and password that
         the customer enters into local storage.
     */
    this.state.remember=== true?
 sessionStorage.setItem(
     "credentials",
     JSON.stringify({
-        email: this.state.email,
+        username: this.state.username,
         password:this.state.password,
         remember: true
     })
@@ -45,7 +45,7 @@ sessionStorage.setItem(
     localStorage.setItem(
         "credentials",
         JSON.stringify({
-            email: this.state.email,
+            username: this.state.username,
             password: this.state.password
         })
     )
@@ -59,11 +59,11 @@ sessionStorage.setItem(
         <fieldset>
             <h3>Please sign in</h3>
             <div className="formgrid">
-                <input onChange={this.handleFieldChange} type="email"
-                    id="email"
-                    placeholder="Email address"
+                <input onChange={this.handleFieldChange} type="username"
+                    id="username"
+                    placeholder="username"
                     required="" autoFocus="" />
-                <label htmlFor="inputEmail">Email address</label>
+                <label htmlFor="inputusername">Username</label>
 
                 <input onChange={this.handleFieldChange} type="password"
                     id="password"
@@ -75,6 +75,7 @@ sessionStorage.setItem(
             <button type="submit">
                 Sign in
             </button>
+            <Link to={`/register`}><h1>Register</h1></Link>
         </fieldset>
       </form>
     )
