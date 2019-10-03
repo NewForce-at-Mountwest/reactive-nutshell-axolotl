@@ -17,6 +17,18 @@ class NewsEditForm extends Component {
     this.setState(stateToChange);
   };
 
+  componentDidMount() {
+    NewsManager.getOne(this.props.match.params.newsId).then(news => {
+      this.setState({
+        title: news.title,
+        synopsis: news.synopsis,
+        url: news.url,
+        loadingStatus: false
+      });
+    });
+  };
+
+
   updateExistingNews = evt => {
     evt.preventDefault();
     this.setState({ loadingStatus: true });
@@ -29,17 +41,6 @@ class NewsEditForm extends Component {
 
     NewsManager.update(editedNews).then(() => this.props.history.push("/news"));
   };
-
-  componentDidMount() {
-    NewsManager.getOne(this.props.match.params.newsId).then(news => {
-      this.setState({
-        title: news.title,
-        synopsis: news.synopsis,
-        url: news.url,
-        loadingStatus: false
-      });
-    });
-  }
 
   render() {
     return (
