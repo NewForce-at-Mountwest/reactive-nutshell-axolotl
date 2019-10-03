@@ -23,7 +23,6 @@ class NewsList extends Component {
     //invoke the delete function in NewsManger and re-direct to the news list.
     this.setState({loadingStatus: true})
     NewsManager.softDelete(this.props.newsId)
-    .then(() => this.props.history.push("/news"))
 }
 
   componentDidMount() {
@@ -42,16 +41,22 @@ class NewsList extends Component {
     return (
         <>
         <section className="section-content">
+          <br>
+          </br>
           <button
             type="button"
-            className="btn"
+            className="btn btn-primary"
             onClick={() => {
               this.props.history.push("/news/new");
             }}
           >
             New Article
           </button>
+          <br>
+          </br>
         </section>
+        <br>
+        </br>
         <div className="container-cards">
           {this.state.news.map(singleNews =>
             !singleNews.archived ? (

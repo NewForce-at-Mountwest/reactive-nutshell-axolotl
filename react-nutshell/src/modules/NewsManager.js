@@ -28,6 +28,7 @@ export default {
       body: JSON.stringify(newArticle)
     }).then(data => data.json());
   },
+  
   update(editedNews) {
     return fetch(`${remoteURL}/news/${editedNews.id}`, {
       method: "PUT",

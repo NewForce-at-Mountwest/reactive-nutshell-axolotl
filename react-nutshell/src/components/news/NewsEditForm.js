@@ -26,8 +26,7 @@ class NewsEditForm extends Component {
         loadingStatus: false
       });
     });
-  };
-
+  }
 
   updateExistingNews = evt => {
     evt.preventDefault();
@@ -67,12 +66,23 @@ class NewsEditForm extends Component {
                 value={this.state.synopsis}
               />
               <label htmlFor="synopsis">Synopsis</label>
+
+              <input
+                type="text"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="url"
+                value={this.state.url}
+              />
+              <label htmlFor="url">URL</label>
             </div>
+
             <div className="alignRight">
               <button
                 type="button"
                 disabled={this.state.loadingStatus}
-                onClick={this.updateExistingArticle}
+                onClick={this.updateExistingNews}
                 className="btn btn-primary"
               >
                 Submit

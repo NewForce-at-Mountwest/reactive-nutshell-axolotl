@@ -1,4 +1,4 @@
-import { Route, } from "react-router-dom";
+import { Route } from "react-router-dom";
 // Redirect
 import React, { Component } from "react";
 import Home from "./home/Home";
@@ -7,7 +7,6 @@ import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
-
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
@@ -25,8 +24,8 @@ class ApplicationViews extends Component {
         />
         {/* <Route path="/login" component={Login} /> */}
 
-                {/* News Routes */}
-                <Route
+        {/* News Routes */}
+        <Route
           exact
           path="/news"
           render={props => {
@@ -41,6 +40,7 @@ class ApplicationViews extends Component {
           // }}
         />
         <Route
+          exact
           path="/news/new"
           render={props => {
             return <NewsForm {...props} />;
@@ -60,7 +60,8 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          exact path="/events"
+          exact
+          path="/events"
           render={props => {
             return <EventList {...props} />;
           }}
