@@ -2,8 +2,50 @@
   "tasks": [
     {}
   ],
-  "news": [],
-  "users": [],
+  "news": [
+    {
+      "id": 1,
+      "title": "Amazon Issues Reminder To Employees About Bringing In Outside Thoughts To Work",
+      "synopsis": "SEATTLE—In a stern company-wide email sent to its more than 650,000 employees worldwide, Amazon reportedly issued a reminder Wednesday that the company expressly forbids bringing outside thoughts into the workplace. “This policy is stated clearly in our employee manual and posted prominently in every breakroom, but once more we find it necessary to reiterate that when you step onto company premises, you are required to leave behind any ideas, beliefs, or sentiments not provided to you by Amazon,” senior vice president Jeffrey M. Blackburn wrote in the email, adding that if the current situation does not improve, he will be forced to instruct company security to conduct random interrogations of employees during the workday to ensure full compliance with the rule. “From the moment your shift begins until the moment it ends, you must not engage with or give voice to any unauthorized opinions or concerns that may arise in your conscious mind. In addition, though what you do on your own time is of course up to you, we would prefer you also keep personal thoughts to a minimum at home and never gather with your coworkers in groups of two or more after hours. Trust us—this is for your own good.” Sources also confirmed that Amazon warehouse managers have been given permission to issue suspensions to any employees caught having daydreams while on lunch or bathroom breaks.",
+      "url": "https://www.theonion.com/amazon-issues-reminder-to-employees-about-bringing-in-o-1838712777",
+      "archived": false
+    },
+    {
+      "id": 2,
+      "title": "‘Are You The Whistleblower?’ Trump Boys Ask White House Janitor After Giving Him Serum Of All The Sodas Mixed Together",
+      "synopsis": "WASHINGTON—Strapping the suspect to a chair and demanding to know if “he was the whistleblower, or else,” the Trump boys reportedly spent hours interrogating a White House janitor Wednesday after giving him a serum of all the sodas mixed together. “Well, well, well, Mr. Janitor, good luck keeping secrets from our awesome dad now that you’ve taken a sip of our super-powerful CIA brain juice,” said Eric Trump, prompting Don Jr. to give the White House employee some more of the “truth sermon [sic],” which included a mixture of Diet Coke, Fanta, Sprite, Powerade, Minute Maid, and Mr. Pibb, after the custodian refused to talk. “Who was it, toilet man? Was it one of our daddy’s friends? Or was it a pretty spy lady? Or was it you the whole time who whistleblew [sic] our dad all over the TV just for being the bestest president in the whole wide world?” At press time, Eric had reportedly begun to hyperventilate after accidentally taking a sip of the 30-ounce soda cup, letting out a huge burp, and realizing that he might have been the whistleblower the whole time.",
+      "url": "https://politics.theonion.com/are-you-the-whistleblower-trump-boys-ask-white-house-1838701775",
+      "archived": false
+    },
+    {
+      "id": 3,
+      "title": "Crime Scene Has All The Different Types Of Cops",
+      "synopsis": "PORTLAND, ME—After observing one cop barking orders, a second marking off the area with police tape, and a third drawing a chalk outline around a body, sources confirmed Wednesday that a crime scene in a downtown neighborhood appeared to have all the different types of cops. “There’s the ones with ties, the ones in uniform, the ones with plastic gloves who collect evidence—man, they’ve got at least one of every kind of cop you can think of,” said onlooker Ben Roberts, who noted that the precinct appeared to have pulled out all the stops, sending over cops in trench coats, traffic cops to keep things moving, rookie cops who weren’t used to all this violence, grizzled alcoholic cops who had seen too much, and even some casually dressed plainclothes cops who looked like regular people but were really cops. “Detectives, forensics, a transit cop who just poked his head up out of the subway—I think I even saw a cop on a horse. Oh, look! That one cop just flashed his badge, told all the other cops this was his crime scene now, and brought in a whole new set of cops! He must be a big, big cop!” At press time, witnesses confirmed the big cop had instructed riot cops to disperse the angry crowd that had gathered so the cops who plant drugs on the bodies of cop-shooting victims could get to work.",
+      "url": "https://local.theonion.com/crime-scene-has-all-the-different-types-of-cops-1838700467",
+      "archived": false
+    },
+    {
+      "title": "Aging Tom Cruise No Longer Able To Climb Outer Wall Of Skyscraper Without Taking Break Halfway Through",
+      "synopsis": "SAN DIEGO—As Tom Cruise rested on a window ledge 300 feet in the air and took a sip of water Friday, onlookers remarked that the 57-year-old actor was really showing his age by taking a break midway through his scaling of One America Plaza. “It’s tough to watch how winded he gets nowadays, especially after he gets past the 14th or 15th floor of a building,” said Paramount Pictures CEO Jim Gianopulos, who has worked with Cruise on the Mission Impossible franchise and the forthcoming Top Gun: Maverick, explaining that a skyscraper climb that might have taken the star just 20 minutes a decade ago now takes up to an hour. “Tom probably needs to be more realistic about the expectations he’s placing on his body in middle age. He’ll be running from a moving train and Henry Cavill or someone will dart right past him and he’ll get so upset. I’ll tell him, ‘It’s okay! You’re older now. You’re allowed to hold on to the side of a jet with two hands instead of just one!’” At press time, disappointed sources reported seeing Cruise hanging from a construction crane near the 29th floor trying to work out a charley horse.",
+      "url": "https://entertainment.theonion.com/aging-tom-cruise-no-longer-able-to-climb-outer-wall-of-1838536715",
+      "id": 4,
+      "archived": false
+    },
+    {
+      "title": "Your Horoscopes — Week Of October 1, 2019",
+      "synopsis": "Click the link below to view your horoscope!",
+      "url": "https://entertainment.theonion.com/your-horoscopes-week-of-october-1-2019-1838649206",
+      "id": 5,
+      "archived": false
+    },
+    {
+      "title": "Child Pointing Out Cow On Side Of Road Must Think Parents Don’t Have Fucking Eyes",
+      "synopsis": "AMERICA CITY, KS—As he peered out the window of his family’s Dodge Caravan and spotted the animal right in the middle of a pasture where nobody could miss it, 2-year-old Owen Kincaid reportedly pointed out a cow to his parents Monday, acting as if they don’t have eyes in their fucking heads. “Cow!” said Kincaid, who, though sources confirmed his mother and father have made eye contact with him since the day he was born, is apparently enough of an idiot to think they can’t see the goddamn 1,500-pound bovine directly in their field of vision—or else enough of an asshole to think he needs to remind his college-educated parents what a goddamn cow is. “Look, look! Cow.” At press time, sources confirmed the piece-of-shit toddler, who appears to consider himself a fucking expert on such matters, informed everyone in the car that cows go moo.",
+      "url": "https://local.theonion.com/child-pointing-out-cow-on-side-of-road-must-think-paren-1838641856",
+      "id": 6,
+      "archived": false
+    }
+  ],
   "events": [
     {
       "id": 1,
