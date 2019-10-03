@@ -1,18 +1,22 @@
 {
     "tasks":[
+
     {"id": 1,
     "userId": 3,
-    "task": "Take out garbage"
+    "task": "Take out garbage",
+    "completion": "10/10/19"
     },
     {
     "id": 2,
     "userId": 3,
-    "task": "Roll in the Garbage"
+    "task": "Roll in the Garbage",
+    "completion": "10/20/19"
     },
     {
         "id": 3,
         "userId": 3,
-        "task": "Eat the Garbage"
+        "task": "Eat the Garbage",
+        "completion": "10/30/19"
     }
 ],
 
