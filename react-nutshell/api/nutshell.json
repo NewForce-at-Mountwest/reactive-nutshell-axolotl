@@ -28,6 +28,15 @@
 
 ],
 "events": [
-
-]
+    {
+      "id": 1,
+      "event": "Concert",
+      "date": "December 3, 2019"
+    },
+    {
+      "event": "Party",
+      "date": "2019-10-22",
+      "id": 2
+    }
+  ]
 }

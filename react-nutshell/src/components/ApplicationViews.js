@@ -5,6 +5,9 @@ import TaskList from "./tasks/TaskList";
 import TaskCard from "./tasks/TaskCard";
 import TaskForm from "./tasks/TaskForm";
 import TaskEditForm from "./tasks/TaskEditForm";
+import EventList from "./events/EventList";
+import EventForm from "./events/EventForm";
+
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
@@ -45,11 +48,24 @@ class ApplicationViews extends Component {
           path="/tasks/TaskList"
           render={props => {
             return <TaskList {...props}
-            taskId={parseInt(props.match.params.taskId)}
+            taskId={parseInt(props.match.params.taskId)}/>
+          }}
               />
+
+              <Route
+          exact path="/events"
+          render={props => {
+            return <EventList {...props} />;
           }}
         />
-        {/* <Route path="/login" component={Login} /> */}
+        <Route
+          path="/events/new"
+          render={props => {
+            return <EventForm {...props} />;
+          }}
+        />
+         {/* { <Route path="/login" component={Login} /> } */}
+
       </React.Fragment>
     );
   }
