@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
+import LoginManager from "../../modules/LoginManager";
 class Login extends Component {
 
   // Set initial state
@@ -28,28 +29,19 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault()
-    /*
-        For now, just store the username and password that
-        the customer enters into local storage.
-    */
-   this.state.remember=== true?
-sessionStorage.setItem(
-    "credentials",
-    JSON.stringify({
-        username: this.state.username,
-        password:this.state.password,
-        remember: true
-    })
+    const usernameValue = this.state.username;
+    const passwordValue = this.state.password;
 
-):
-    localStorage.setItem(
-        "credentials",
-        JSON.stringify({
-            username: this.state.username,
-            password: this.state.password
-        })
-    )
-    this.props.history.push("/");
+    LoginManager.getUserbyUsername(usernameValue).then(user=>{
+      console.log("this is the user", user)
+      console.log(user[0].password, passwordValue);
+      if (user[0].password === passwordValue && user[0].username === usernameValue) {
+       this.state.remember=== true?
+       sessionStorage.setItem("userId", user[0].id):
+        localStorage.setItem("userId", user[0].id);
+      }});
+
+    this.props.history.push("/home");
 
   }
 

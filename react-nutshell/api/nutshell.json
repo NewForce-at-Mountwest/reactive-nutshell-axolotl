@@ -3,7 +3,26 @@
     {}
   ],
   "news": [],
-  "users": [],
+  "users": [
+    {
+      "username": "b",
+      "email": "a@c.com",
+      "password": "d",
+      "id": 1
+    },
+    {
+      "username": "a",
+      "email": "a@c.com",
+      "password": "f",
+      "id": 2
+    },
+    {
+      "username": "Jacob",
+      "email": "Jacob@PerryPlatypus.com",
+      "password": "Detective",
+      "id": 3
+    }
+  ],
   "events": [
     {
       "id": 1,

@@ -1,15 +1,12 @@
 import React, { Component } from "react"
-
-class Login extends Component {
-
+import LoginManager from '../../modules/LoginManager'
+class Register extends Component {
   // Set initial state
   state = {
       username: "",
     email: "",
-    password: "",
-    remember: false
+    password: ""
   }
-
   // Update state whenever an input field is edited
   handleFieldChange = (evt) => {
     const stateToChange = {}
@@ -19,43 +16,21 @@ class Login extends Component {
   //Update Checkbox
   handleInputChange = (event) => {
     const target = event.target;
-    const username = target.username;
-
-    this.setState({
-      remember: value
-    });
-  }
-
-  handleLogin = (e) => {
-    e.preventDefault()
-    /*
-        For now, just store the email and password that
-        the customer enters into local storage.
-    */
-   this.state.remember=== true?
-sessionStorage.setItem(
-    "credentials",
-    JSON.stringify({
+  };
+  constructNewUser = evt => {
+    evt.preventDefault();
+      this.setState({ loadingStatus: true })
+      const user = {
         username: this.state.username,
         email: this.state.email,
-        password:this.state.password,
-        remember: true
-    })
+        password: this.state.password
+      }
+      LoginManager.postNewUser(user);
+    this.props.history.push("/")}
 
-):
-    localStorage.setItem(
-        "credentials",
-        JSON.stringify({
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password
-        })
-    )
-    this.props.history.push("/users");
-  }
   render() {
     return (
-      <form onSubmit={this.handleLogin}>
+      <form >
         <fieldset>
             <h3>Please sign in</h3>
             <div className="formgrid">
@@ -76,7 +51,7 @@ sessionStorage.setItem(
                     required="" />
                 <label htmlFor="inputPassword">Password</label>
             </div>
-            <button type="submit">
+            <button type="submit" onClick={this.constructNewUser}>
                 Register
             </button>
         </fieldset>
@@ -86,4 +61,4 @@ sessionStorage.setItem(
 
 }
 
-export default Login
+export default Register
