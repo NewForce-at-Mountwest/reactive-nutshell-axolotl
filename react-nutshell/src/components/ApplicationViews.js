@@ -18,6 +18,14 @@ class ApplicationViews extends Component {
       <React.Fragment>
         <Route
           exact
+          path="/home"
+          render={props => {
+            return <Home {...props}
+            taskId={parseInt(props.match.params.taskId)}/>
+          }}
+              />
+        <Route
+          exact
           path="/tasks/TaskCard"
           render={props => {
             return <TaskCard {...props}
@@ -45,7 +53,7 @@ class ApplicationViews extends Component {
         />
         <Route
           exact
-          path="/tasks/TaskList"
+          path="/tasks"
           render={props => {
             return <TaskList {...props}
             taskId={parseInt(props.match.params.taskId)}/>

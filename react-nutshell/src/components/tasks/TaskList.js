@@ -10,7 +10,7 @@ class TaskList extends Component {
   };
 
   componentDidMount() {
-    console.log("ANIMAL LIST: ComponentDidMount");
+    console.log("TASK LIST: ComponentDidMount");
     //getAll from AnimalManager and hang on to that data; put it in state
     TaskManager.getAll().then(tasksFromDatabase => {
       console.log(tasksFromDatabase);
@@ -30,7 +30,7 @@ class TaskList extends Component {
             type="button"
             className="btn"
             onClick={() => {
-              this.props.history.push("/tasks/new");
+              this.props.history.push("/tasks/TaskForm");
             }}
           >
             Add Task
