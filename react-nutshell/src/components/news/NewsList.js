@@ -19,6 +19,13 @@ class NewsList extends Component {
       });
   };
 
+  handleDelete = () => {
+    //invoke the delete function in NewsManger and re-direct to the news list.
+    this.setState({loadingStatus: true})
+    NewsManager.softDelete(this.props.newsId)
+    .then(() => this.props.history.push("/news"))
+}
+
   componentDidMount() {
     // console.log("NEWS LIST: ComponentDidMount");
     //getAll from NewsManager and hang on to that data; put it in state

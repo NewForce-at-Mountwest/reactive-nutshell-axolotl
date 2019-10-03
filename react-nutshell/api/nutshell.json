@@ -1,33 +1,33 @@
 {
-    "tasks":[
+  "tasks": [
+    {}
+  ],
+  "news": [
     {
-
-    }
-],
-"news": [
-    {
-        "id": 1,
-        "title": "test 1",
-        "synopsis": "test 1",
-        "url": "test@test.com"
+      "id": 1,
+      "title": "test 1",
+      "synopsis": "test 1",
+      "url": "test@test.com"
     },
     {
-        "id": 2,
-        "title": "",
-        "synopsis": "",
-        "url": ""
+      "id": 2,
+      "title": "Delete this one",
+      "synopsis": "Delete isn't working",
+      "url": "deletethisshit@comeon.com"
     },
     {
-        "id": 3,
-        "title": "",
-        "synopsis": "",
-        "url": ""
+      "id": 3,
+      "title": "",
+      "synopsis": "",
+      "url": ""
+    },
+    {
+      "title": "test 2",
+      "synopsis": "test 2",
+      "url": "test2@test2.com",
+      "id": 4
     }
-],
-"users": [
-
-],
-"events": [
-
-]
+  ],
+  "users": [],
+  "events": []
 }

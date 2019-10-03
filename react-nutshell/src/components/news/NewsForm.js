@@ -37,7 +37,7 @@ class NewsForm extends Component {
       };
 
       // Create the news and redirect user to news list
-      NewsManager.post(news).then(() =>
+      NewsManager.post(article).then(() =>
         this.props.history.push("/news")
       );
     }
