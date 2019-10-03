@@ -1,6 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import Home from "./home/home";
+import Home from "./home/Home";
 import Login from './auth/Login'
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
