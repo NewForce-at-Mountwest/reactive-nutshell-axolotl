@@ -5,7 +5,24 @@
     }
 ],
 "news": [
-
+    {
+        "id": 1,
+        "title": "test 1",
+        "synopsis": "test 1",
+        "url": "test@test.com"
+    },
+    {
+        "id": 2,
+        "title": "",
+        "synopsis": "",
+        "url": ""
+    },
+    {
+        "id": 3,
+        "title": "",
+        "synopsis": "",
+        "url": ""
+    }
 ],
 "users": [
 
