@@ -7,6 +7,7 @@ import "./Events.css";
 
 class EventList extends Component {
   //define what this component needs to render
+  // set the array of events in state
   state = {
     events: []
   };
@@ -20,6 +21,7 @@ class EventList extends Component {
       });
     });
   };
+
   componentDidMount() {
     console.log("EVENT LIST: ComponentDidMount");
     //call getAll from EventManager to bring back all events for a user and hang on to that data; put it in state
@@ -49,9 +51,10 @@ class EventList extends Component {
           </Button>
         </section>
         <div className="container-cards">
-          {this.state.events.map(event => (
+          {this.state.events.map((event, index) => (
             <EventCard
               key={event.id}
+              className = {if(${index}=== 0, className= "first-event" }
               event={event}
               deleteEvent={this.deleteEvent}
               {...this.props}

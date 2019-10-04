@@ -13,6 +13,7 @@ class EventCard extends Component {
           </h4>
           <p>Date: {this.props.event.date}</p>
           <p>Location: {this.props.event.location}</p>
+          {/* button to render the event edit form  */}
           <Button
             variant="light"
             id="edit-btn"
@@ -22,6 +23,7 @@ class EventCard extends Component {
           >
             Edit Event
           </Button>
+          {/* create button to delete event */}
           <Button
             variant="light"
             id="delete-btn"
