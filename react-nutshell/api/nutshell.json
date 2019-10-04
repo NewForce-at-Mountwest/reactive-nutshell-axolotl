@@ -104,10 +104,10 @@
       "id": 7
     },
     {
+      "id": 8,
       "event": "Homecoming",
       "date": "2019-10-05",
-      "location": "HHS",
-      "id": 8
+      "location": "HHS"
     }
   ]
 }
