@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import LoginManager from "../../modules/LoginManager";
+import { isUndefined } from "util";
 class Login extends Component {
 
   // Set initial state
@@ -32,8 +33,7 @@ class Login extends Component {
     const usernameValue = this.state.username;
     const passwordValue = this.state.password;
     LoginManager.getUserbyUsername(usernameValue).then(user=>{
-
-      if (user[0].password === passwordValue && user[0].username === usernameValue) {
+      if(user[0]=== undefined){window.alert("Wrong username or password!")} else if(user[0].password === passwordValue && user[0].username === usernameValue) {
         //checkbox terinary statement
        this.state.remember=== true?
        sessionStorage.setItem("userId", user[0].id):
