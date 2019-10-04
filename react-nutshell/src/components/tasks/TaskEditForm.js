@@ -5,10 +5,8 @@ import TaskManager from "../../modules/TaskManager";
 class TaskEditForm extends Component {
   //set the initial state
   state = {
-      taskId: "",
-    taskName: "",
+    name: "",
     completion: "",
-    loadingStatus: ""
   };
 
   handleFieldChange = evt => {
@@ -22,8 +20,9 @@ class TaskEditForm extends Component {
     this.setState({ loadingStatus: true });
     const editedTask = {
       id: this.props.match.params.taskId,
-      name: this.state.taskName,
+      name: this.state.name,
       completion: this.state.completion,
+      active: true
     };
 
     TaskManager.update(editedTask).then(() =>
@@ -34,8 +33,7 @@ class TaskEditForm extends Component {
   componentDidMount() {
     TaskManager.getOne(this.props.match.params.taskId).then(tasks => {
         this.setState({
-            taskId: tasks.id,
-          taskName: tasks.task,
+          name: tasks.task,
           completion: tasks.completion,
           loadingStatus: false,
         })})};
@@ -52,8 +50,8 @@ class TaskEditForm extends Component {
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
-                id="taskName"
-                value={this.state.taskName}
+                id="name"
+                value={this.state.name}
               />
 
               <label htmlFor="completion">Completion Date</label>

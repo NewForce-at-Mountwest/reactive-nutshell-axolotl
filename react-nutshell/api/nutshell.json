@@ -2,9 +2,9 @@
   "tasks": [
     {
       "id": 1,
-      "userId": 3,
-      "task": "Take out garbage",
-      "completion": "10/10/19"
+      "name": "eat at joes",
+      "completion": "999999",
+      "active": true
     },
     {
       "id": 2,

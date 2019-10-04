@@ -38,7 +38,7 @@ class ApplicationViews extends Component {
         />
         <Route
           exact
-          path="/tasks/TaskEditForm"
+          path="/tasks/:taskId(\d+)/edit"
           render={props => {
             return <TaskEditForm {...props}
             taskId={parseInt(props.match.params.taskId)}

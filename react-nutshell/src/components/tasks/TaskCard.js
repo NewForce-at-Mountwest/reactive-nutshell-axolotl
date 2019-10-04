@@ -8,10 +8,11 @@ class TaskCard extends Component {
         loadingStatus: true,
     }
     handleDelete = () => {
-        //invoke the delete function in TaskManger and re-direct to the animal list.
+        //invoke the delete function in TaskManger and re-direct to the task list.
         this.setState({loadingStatus: true})
         TaskManager.delete(this.props.taskId)
         .then(() => this.props.history.push("/tasks"))
+        console.log(this.props.history)
     }
 
     render() {
@@ -24,7 +25,7 @@ class TaskCard extends Component {
                 <span className="card-taskname">{this.props.taskProp.task}</span>
               </h3>
               <p>Completion Date:{this.props.taskProp.completion}</p>
-              <Link to={`/tasks/${this.props.taskProp.id}/TaskEditForm`}>
+              <Link to={`/tasks/${this.props.taskProp.id}/edit`}>
                 <button>Edit</button>
               </Link>
               <button type="button"onClick={this.handleDelete}>Delete</button>
