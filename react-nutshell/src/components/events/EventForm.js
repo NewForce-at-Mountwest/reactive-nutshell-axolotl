@@ -5,6 +5,7 @@ class EventForm extends Component {
   state = {
     event: "",
     date: "",
+    location: "",
     loadingStatus: false
   };
 
@@ -25,6 +26,7 @@ class EventForm extends Component {
       const event = {
         event: this.state.event,
         date: this.state.date,
+        location: this.state.location
       };
 
       // Create the event and redirect user to event list
@@ -54,6 +56,14 @@ class EventForm extends Component {
                 placeholder="Date"
               />
               <label htmlFor="date">Event Date</label>
+              <input
+                type="text"
+                required
+                onChange={this.handleFieldChange}
+                id="location"
+                placeholder="Event Location"
+              />
+              <label htmlFor="location">Event Location</label>
             </div>
             <div className="alignRight">
               <button

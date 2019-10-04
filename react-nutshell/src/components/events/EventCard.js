@@ -12,6 +12,7 @@ class EventCard extends Component {
             <span className="card-event">{this.props.event.event}</span>
           </h4>
           <p>Date: {this.props.event.date}</p>
+          <p>Location: {this.props.event.location}</p>
           <Button
             variant="light"
             id="edit-btn"

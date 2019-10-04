@@ -6,7 +6,8 @@ class EventEditForm extends Component {
   // set initial state
   state = {
     event: "",
-    date: ""
+    date: "",
+    location: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -21,7 +22,8 @@ class EventEditForm extends Component {
     const editedEvent = {
       id: this.props.match.params.eventId,
       event: this.state.event,
-      date: this.state.date
+      date: this.state.date,
+      location: this.state.location
     };
     // re direct to events list page
     EventManager.update(editedEvent).then(() =>
@@ -37,6 +39,7 @@ class EventEditForm extends Component {
       this.setState({
         event: oneEvent.event,
         date: oneEvent.date,
+        location: oneEvent.location,
         loadingstatus: false
       });
     });
@@ -50,7 +53,6 @@ class EventEditForm extends Component {
               <input
                 type="text"
                 required
-                className="form-control"
                 onChange={this.handleFieldChange}
                 id="event"
                 value={this.state.event}
@@ -59,12 +61,19 @@ class EventEditForm extends Component {
               <input
                 type="date"
                 required
-                className="form-control"
                 onChange={this.handleFieldChange}
                 id="date"
                 value={this.state.date}
               />
               <label htmlFor="date">Date</label>
+              <input
+                type="text"
+                required
+                onChange={this.handleFieldChange}
+                id="location"
+                value={this.state.location}
+              />
+              <label htmlFor="location">Location</label>
             </div>
           </fieldset>
           <Button
