@@ -1,5 +1,4 @@
 import { Route, Redirect } from "react-router-dom";
-
 import React, { Component } from "react";
 import Home from "./home/home";
 import Login from './auth/Login'

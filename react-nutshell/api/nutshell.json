@@ -20,6 +20,12 @@
       "email": "Kelli@Evans.com",
       "password": "123",
       "id": 4
+    },
+    {
+      "username": "Steve",
+      "email": "a@c.com",
+      "password": "s",
+      "id": 5
     }
   ],
   "news": [
