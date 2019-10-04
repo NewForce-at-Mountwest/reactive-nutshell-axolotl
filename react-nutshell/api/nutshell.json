@@ -16,22 +16,10 @@
       "id": 3
     },
     {
-      "username": "Kelli",
-      "email": "Kelli@Evans.com",
-      "password": "123",
-      "id": 4
-    },
-    {
-      "username": "abc",
-      "email": "abc",
-      "password": "123",
-      "id": 5
-    },
-    {
       "username": "123",
       "email": "123",
       "password": "123",
-      "id": 6
+      "id": 4
     }
   ],
   "news": [
@@ -81,30 +69,6 @@
       "synopsis": "AMERICA CITY, KS—As he peered out the window of his family’s Dodge Caravan and spotted the animal right in the middle of a pasture where nobody could miss it, 2-year-old Owen Kincaid reportedly pointed out a cow to his parents Monday, acting as if they don’t have eyes in their fucking heads. “Cow!” said Kincaid, who, though sources confirmed his mother and father have made eye contact with him since the day he was born, is apparently enough of an idiot to think they can’t see the goddamn 1,500-pound bovine directly in their field of vision—or else enough of an asshole to think he needs to remind his college-educated parents what a goddamn cow is. “Look, look! Cow.” At press time, sources confirmed the piece-of-shit toddler, who appears to consider himself a fucking expert on such matters, informed everyone in the car that cows go moo.",
       "date": "2019-10-07",
       "url": "https://local.theonion.com/child-pointing-out-cow-on-side-of-road-must-think-paren-1838641856"
-    },
-    {
-      "title": "123",
-      "synopsis": "123",
-      "url": "123",
-      "date": "2019-10-07",
-      "id": 7,
-      "archived": true
-    },
-    {
-      "title": "123",
-      "synopsis": "123",
-      "url": "123",
-      "date": "2019-10-08",
-      "id": 8,
-      "archived": true
-    },
-    {
-      "title": "456",
-      "synopsis": "456",
-      "url": "456",
-      "date": "2019-10-02",
-      "id": 9,
-      "archived": true
     }
   ],
   "events": [
