@@ -4,7 +4,7 @@ import TaskManager from "../../modules/TaskManager";
 
 class TaskForm extends Component {
   state = {
-    taskName: "",
+    name: "",
     completion: "",
     loadingStatus: false,
     taskId: ""
@@ -37,7 +37,7 @@ class TaskForm extends Component {
     } else {
       this.setState({ loadingStatus: true });
       const task = {
-        task: this.state.task,
+        name: this.state.task,
         completion: this.state.completion,
         Id: +this.state.taskId // convert to number
       };
@@ -60,7 +60,7 @@ class TaskForm extends Component {
                 type="text"
                 required
                 onChange={this.handleFieldChange}
-                id="task"
+                id="name"
                 placeholder="Task to complete"
               />
 

@@ -32,8 +32,8 @@ class TaskList extends Component {
             onClick={() => {
               this.props.history.push("/tasks/TaskForm");
             }}
-          >
-            Add Task
+>
+            ADD TASK
           </button>
         </section>
         <div className="container-cards">

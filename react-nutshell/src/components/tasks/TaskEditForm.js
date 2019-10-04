@@ -44,7 +44,7 @@ class TaskEditForm extends Component {
         <form>
           <fieldset>
             <div className="formgrid">
-              <label htmlFor="taskName">Task</label>
+              <label htmlFor="Task">Task</label>
               <input
                 type="text"
                 required

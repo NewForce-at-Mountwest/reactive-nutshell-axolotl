@@ -2,7 +2,6 @@
   "tasks": [
     {
       "id": 1,
-      "name": "eat at joes",
       "completion": "999999",
       "active": true
     },
