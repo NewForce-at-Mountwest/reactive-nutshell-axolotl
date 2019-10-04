@@ -30,8 +30,7 @@ class NewsForm extends Component {
     if (
       this.state.title === "" ||
       this.state.synopsis === "" ||
-      this.state.url === "" ||
-      this.state.date === ""
+      this.state.url === ""
     ) {
       window.alert("Please input a title, synopsis and url");
     } else {
@@ -40,7 +39,7 @@ class NewsForm extends Component {
         title: this.state.title,
         synopsis: this.state.synopsis,
         url: this.state.url,
-        date: this.state.date
+        date: Date.now()
       };
 
       // Create the news and redirect user to news list
@@ -63,14 +62,14 @@ class NewsForm extends Component {
                 id="title"
                 placeholder="News Title"
               />
-              <label htmlFor="date">Article Date</label>
+              {/* <label htmlFor="date">Article Date</label>
               <input
                 type="date"
                 required
                 onChange={this.handleFieldChange}
                 id="date"
                 placeholder="Date"
-              />
+              /> */}
               <label htmlFor="synopsis">Synopsis</label>
               <input
                 type="text"
