@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import EventManager from "../../modules/EventManager";
 
 class EventForm extends Component {
+  // set the object keys in state
   state = {
     event: "",
     date: "",
+    location: "",
     loadingStatus: false
   };
 
@@ -25,6 +27,7 @@ class EventForm extends Component {
       const event = {
         event: this.state.event,
         date: this.state.date,
+        location: this.state.location
       };
 
       // Create the event and redirect user to event list
@@ -34,6 +37,7 @@ class EventForm extends Component {
 
   render() {
     return (
+      // return form to add an a new event
       <>
         <form>
           <fieldset>
@@ -54,8 +58,17 @@ class EventForm extends Component {
                 placeholder="Date"
               />
               <label htmlFor="date">Event Date</label>
+              <input
+                type="text"
+                required
+                onChange={this.handleFieldChange}
+                id="location"
+                placeholder="Event Location"
+              />
+              <label htmlFor="location">Event Location</label>
             </div>
             <div className="alignRight">
+              {/* button to submit new wvent and call method to add to json db */}
               <button
                 id="new-event-btn"
                 type="button"
