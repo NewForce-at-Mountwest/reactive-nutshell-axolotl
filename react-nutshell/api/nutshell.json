@@ -2,37 +2,21 @@
   "tasks": [
     {
       "id": 1,
+      "name": "Justin Warden",
       "completion": "999999",
-      "active": true
+      "userId": null
     },
     {
       "id": 2,
-      "userId": 3,
-      "task": "Roll in the Garbage",
-      "completion": "10/20/19"
+      "name": "Roll in the Garbage!!!!",
+      "completion": "10/20/19",
+      "userId": null
     },
     {
       "id": 3,
       "userId": 3,
       "task": "Eat the Garbage",
       "completion": "10/30/19"
-    },
-    {
-      "completion": "7777777",
-      "Id": 0,
-      "id": 4
-    },
-    {
-      "task": "Make Dinner",
-      "completion": "10/10/2019",
-      "Id": 0,
-      "id": 5
-    },
-    {
-      "task": "Make Breakfast",
-      "completion": "10/10/2019",
-      "Id": 0,
-      "id": 6
     }
   ],
   "news": [

@@ -7,6 +7,7 @@ class TaskEditForm extends Component {
   state = {
     name: "",
     completion: "",
+    userId: ""
   };
 
   handleFieldChange = evt => {
@@ -22,7 +23,7 @@ class TaskEditForm extends Component {
       id: this.props.match.params.taskId,
       name: this.state.name,
       completion: this.state.completion,
-      active: true
+      userId: localStorage.getItem('userId')
     };
 
     TaskManager.update(editedTask).then(() =>
