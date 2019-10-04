@@ -22,30 +22,35 @@ class Login extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-//set State for remember
+    //set State for remember
     this.setState({
       remember: value
     });
   }
-//handle Login function to retrieve username and password value and verify if they are in the database.
+  //handle Login function to retrieve username and password value and verify if they are in the database.
   handleLogin = (e) => {
     e.preventDefault()
     const usernameValue = this.state.username;
     const passwordValue = this.state.password;
-    LoginManager.getUserbyUsername(usernameValue).then(user=>{
-      if(user[0]=== undefined){window.alert("Wrong username or password!")} else if(user[0].password === passwordValue && user[0].username === usernameValue) {
+    LoginManager.getUserbyUsername(usernameValue).then(user => {
+      if (user[0] === undefined) { window.alert("Wrong username or password!") } else if (user[0].password === passwordValue && user[0].username === usernameValue) {
         //checkbox terinary statement
-       this.state.remember=== true?
-       sessionStorage.setItem("userId", user[0].id):
-        localStorage.setItem("userId", user[0].id);
-        //redirects to home page
-        this.props.history.push("/home")
+        if (this.state.remember === true) {
+          localStorage.setItem("userId", user[0].id)
+          sessionStorage.setItem("userId", user[0].id)
+            this.props.history.push("/home")
+        } else {
+          localStorage.setItem("userId", user[0].id);
+          //redirects to home page
+          this.props.history.push("/home")
+        }
       }
-    else{
-      //alerts if name and password are not in the database
-      window.alert("Wrong username or password!")
-    }})
-   }
+      else {
+        //alerts if name and password are not in the database
+        window.alert("Wrong username or password!")
+      }
+    })
+  }
 
 
 
@@ -54,26 +59,26 @@ class Login extends Component {
       //Printed Form
       <form onSubmit={this.handleLogin}>
         <fieldset>
-            <h3>Please sign in</h3>
-            <div className="formgrid">
+          <h3>Please sign in</h3>
+          <div className="formgrid">
             <label htmlFor="inputusername">Username</label><div>
             </div>
-                <input onChange={this.handleFieldChange} type="username"
-                    id="username"
-                    placeholder="username"
-                    required="" autoFocus="" /><div></div>
-<label htmlFor="inputPassword"> Password</label><div></div>
-                <input onChange={this.handleFieldChange} type="password"
-                    id="password"
-                    placeholder="Password"
-                    required="" />
-            </div>
-            <div>Remember Me?
-              <input onChange = {this.handleInputChange}type= "checkbox" id="remember"/></div>
-            <button type="submit">
-                Sign in
+            <input onChange={this.handleFieldChange} type="username"
+              id="username"
+              placeholder="username"
+              required="" autoFocus="" /><div></div>
+            <label htmlFor="inputPassword"> Password</label><div></div>
+            <input onChange={this.handleFieldChange} type="password"
+              id="password"
+              placeholder="Password"
+              required="" />
+          </div>
+          <div>Remember Me?
+              <input onChange={this.handleInputChange} type="checkbox" id="remember" /></div>
+          <button type="submit">
+            Sign in
             </button>
-            <Link to={`/register`}><p>Register</p></Link>
+          <Link to={`/register`}><p>Register</p></Link>
         </fieldset>
       </form>
     )
