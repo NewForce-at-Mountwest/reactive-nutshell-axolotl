@@ -76,7 +76,7 @@
     {
       "id": 2,
       "event": "Party",
-      "date": "2019-10-22",
+      "date": "2019-10-23",
       "location": "The Hill"
     },
     {
@@ -102,6 +102,12 @@
       "date": "2020-03-12",
       "location": "The Hotel",
       "id": 7
+    },
+    {
+      "event": "Homecoming",
+      "date": "2019-10-05",
+      "location": "HHS",
+      "id": 8
     }
   ]
 }
