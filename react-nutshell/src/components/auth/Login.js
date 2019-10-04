@@ -30,20 +30,21 @@ class Login extends Component {
   handleLogin = (e) => {
     e.preventDefault()
     const usernameValue = this.state.username;
-    const passwordValue = this.state.password;
 
     LoginManager.getUserbyUsername(usernameValue).then(user=>{
-      console.log("this is the user", user)
-      console.log(user[0].password, passwordValue);
+      const passwordValue = this.state.password;
       if (user[0].password === passwordValue && user[0].username === usernameValue) {
        this.state.remember=== true?
        sessionStorage.setItem("userId", user[0].id):
         localStorage.setItem("userId", user[0].id);
-      }});
+      }
+    else{
+      window.alert("Wrong username or password!")
+    }})
 
-    this.props.history.push("/home");
+    this.props.history.push("/home")}
 
-  }
+  
 
   render() {
     return (

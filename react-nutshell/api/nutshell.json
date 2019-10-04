@@ -10,17 +10,18 @@
       "id": 1
     },
     {
-      "username": "a",
-      "email": "a@c.com",
-      "password": "f",
-      "id": 2
-    },
-    {
       "username": "Jacob",
       "email": "Jacob@PerryPlatypus.com",
       "password": "Detective",
-      "id": 3}],
-
+      "id": 3
+    },
+    {
+      "username": "Kelli",
+      "email": "Kelli@Evans.com",
+      "password": "123",
+      "id": 4
+    }
+  ],
   "news": [
     {
       "id": 1,

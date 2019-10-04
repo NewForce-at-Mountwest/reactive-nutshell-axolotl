@@ -26,7 +26,7 @@ class Register extends Component {
         password: this.state.password
       }
       LoginManager.postNewUser(user);
-    this.props.history.push("/")}
+    this.props.history.push("/login")}
 
   render() {
     return (

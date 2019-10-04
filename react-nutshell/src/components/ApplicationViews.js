@@ -1,5 +1,5 @@
-import { Route } from "react-router-dom";
-// Redirect
+import { Route, Redirect } from "react-router-dom";
+
 import React, { Component } from "react";
 import Home from "./home/Home";
 import Login from './auth/Login'
@@ -16,11 +16,11 @@ class ApplicationViews extends Component {
     render() {
       return (
         <React.Fragment>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register}/>
-          <Route exact path="/" render={(props) => {
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register"component={Register}/>
+          <Route exact path="/home" render={(props) => {
          if (this.isAuthenticated()){
-          return <Home />
+          return <Home {...props}/>
         }else{
           return <Redirect to="/login" />
         }
