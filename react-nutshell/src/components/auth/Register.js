@@ -17,6 +17,7 @@ class Register extends Component {
   handleInputChange = (event) => {
     const target = event.target;
   };
+  // creates a new user
   constructNewUser = evt => {
     evt.preventDefault();
       this.setState({ loadingStatus: true })
@@ -25,9 +26,11 @@ class Register extends Component {
         email: this.state.email,
         password: this.state.password
       }
+      //posts user info to database
       LoginManager.postNewUser(user);
+      //redirects to login page
     this.props.history.push("/login")}
-
+//Prints form to DOM
   render() {
     return (
       <form >

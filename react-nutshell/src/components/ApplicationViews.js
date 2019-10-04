@@ -12,22 +12,23 @@ import NewsEditForm from "./news/NewsEditForm";
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => localStorage.getItem("userId") || sessionStorage.getItem("userId")!== null
+  //Authentication for Logged in User
+  isAuthenticated = () => localStorage.getItem("userId") !== null
     render() {
       return (
         <React.Fragment>
+          {/* Login Route */}
             <Route exact path="/login" component={Login} />
+
+            {/* Register Route*/}
             <Route exact path="/register"component={Register}/>
+
+            {/*Home Route*/}
           <Route exact path="/home" render={(props) => {
          if (this.isAuthenticated()){
           return <Home {...props}/>
-        }else{
-          return <Redirect to="/login" />
-        }
-        }} />
-
-
-
+        }else{ return <Redirect to="/login" /> } }} />
+        
         {/* News Routes */}
         <Route
           exact
@@ -42,13 +43,6 @@ class ApplicationViews extends Component {
           render={props => {
             return <NewsForm {...props} />;
           }}
-          // render={props => {
-          //   return this.isAuthenticated() ? (
-          //     <NewsForm {...props} />
-          //   ) : (
-          //     <Redirect to="/login" />
-          //   );
-          // }}
         />
         <Route
           path="/news/:newsId(\d+)/edit"
@@ -73,7 +67,6 @@ class ApplicationViews extends Component {
             return <EventForm {...props} />;
           }}
         />
-        {/* <Route path="/login" component={Login} /> */}
       </React.Fragment>
     );
   }

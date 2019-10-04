@@ -21,54 +21,59 @@ class Login extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
+//set State for remember
     this.setState({
       remember: value
     });
   }
-
+//handle Login function to retrieve username and password value and verify if they are in the database.
   handleLogin = (e) => {
     e.preventDefault()
     const usernameValue = this.state.username;
-
+    const passwordValue = this.state.password;
     LoginManager.getUserbyUsername(usernameValue).then(user=>{
-      const passwordValue = this.state.password;
+
       if (user[0].password === passwordValue && user[0].username === usernameValue) {
+        //checkbox terinary statement
        this.state.remember=== true?
        sessionStorage.setItem("userId", user[0].id):
         localStorage.setItem("userId", user[0].id);
+        //redirects to home page
+        this.props.history.push("/home")
       }
     else{
+      //alerts if name and password are not in the database
       window.alert("Wrong username or password!")
     }})
+   }
 
-    this.props.history.push("/home")}
 
-  
 
   render() {
     return (
+      //Printed Form
       <form onSubmit={this.handleLogin}>
         <fieldset>
             <h3>Please sign in</h3>
             <div className="formgrid">
+            <label htmlFor="inputusername">Username</label><div>
+            </div>
                 <input onChange={this.handleFieldChange} type="username"
                     id="username"
                     placeholder="username"
-                    required="" autoFocus="" />
-                <label htmlFor="inputusername">Username</label>
-
+                    required="" autoFocus="" /><div></div>
+<label htmlFor="inputPassword"> Password</label><div></div>
                 <input onChange={this.handleFieldChange} type="password"
                     id="password"
                     placeholder="Password"
                     required="" />
-                <label htmlFor="inputPassword">Password</label>
             </div>
-            <div>Remember Me?<input onChange = {this.handleInputChange}type= "checkbox" id="remember"/></div>
+            <div>Remember Me?
+              <input onChange = {this.handleInputChange}type= "checkbox" id="remember"/></div>
             <button type="submit">
                 Sign in
             </button>
-            <Link to={`/register`}><h1>Register</h1></Link>
+            <Link to={`/register`}><p>Register</p></Link>
         </fieldset>
       </form>
     )
