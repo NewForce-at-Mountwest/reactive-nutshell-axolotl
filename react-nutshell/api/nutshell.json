@@ -19,6 +19,26 @@
       "completion": "10/30/19"
     }
   ],
+  "users": [
+    {
+      "username": "b",
+      "email": "a@c.com",
+      "password": "d",
+      "id": 1
+    },
+    {
+      "username": "Jacob",
+      "email": "Jacob@PerryPlatypus.com",
+      "password": "Detective",
+      "id": 3
+    },
+    {
+      "username": "Kelli",
+      "email": "Kelli@Evans.com",
+      "password": "123",
+      "id": 4
+    }
+  ],
   "news": [
     {
       "id": 1,
