@@ -28,9 +28,9 @@ class EventForm extends Component {
       };
 
       // Create the event and redirect user to event list
-    EventManager.post(event).then(() => this.props.history.push("/events"));
+    EventManager.post(event).then(() => this.props.history.push("/events"))
     }
-  };
+  }
 
   render() {
     return (
@@ -70,6 +70,6 @@ class EventForm extends Component {
       </>
     );
   }
-}
+};
 
 export default EventForm;

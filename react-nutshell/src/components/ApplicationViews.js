@@ -1,57 +1,48 @@
-import { Route } from "react-router-dom";
-// Redirect
+import { Route, Redirect } from "react-router-dom";
+
 import React, { Component } from "react";
-import Home from "./home/Home";
+import Home from "./home/home";
+import Login from './auth/Login'
+import EventList from "./events/EventList";
+import EventForm from "./events/EventForm";
+import Register from "./auth/Register"
 import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
-import EventList from "./events/EventList";
-import EventForm from "./events/EventForm";
-
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null;
-  render() {
-    return (
-      <React.Fragment>
-        <Route
-          exact
-          path="/home"
-          render={props => {
-            return <Home />;
-          }}
-        />
-        {/* <Route path="/login" component={Login} /> */}
+  //Authentication for Logged in User
+  isAuthenticated = () => localStorage.getItem("userId") !== null
+    render() {
+      return (
+        <React.Fragment>
+          {/* Login Route */}
+            <Route exact path="/login" component={Login} />
+
+            {/* Register Route*/}
+            <Route exact path="/register"component={Register}/>
+
+            {/*Home Route*/}
+          <Route exact path="/home" render={(props) => {
+         if (this.isAuthenticated()){
+          return <Home {...props}/>
+        }else{ return <Redirect to="/login" /> } }} />
 
         {/* News Routes */}
         <Route
           exact
           path="/news"
-          render={props => {
-            return <NewsList {...props} />;
-          }}
-          // render={props => {
-          //   if (this.isAuthenticated()) {
-          //     return <NewsList {...props} />;
-          //   } else {
-          //     return <Redirect to="/login" />;
-          //   }
-          // }}
-        />
+          render={props => { if (this.isAuthenticated()){
+          return <NewsList {...props} />}
+          else{
+            return <Redirect to="/login"/>}; }}/>
         <Route
           exact
           path="/news/new"
           render={props => {
             return <NewsForm {...props} />;
           }}
-          // render={props => {
-          //   return this.isAuthenticated() ? (
-          //     <NewsForm {...props} />
-          //   ) : (
-          //     <Redirect to="/login" />
-          //   );
-          // }}
         />
         <Route
           path="/news/:newsId(\d+)/edit"
@@ -63,8 +54,12 @@ class ApplicationViews extends Component {
           exact
           path="/events"
           render={props => {
+            if (this.isAuthenticated()){
             return <EventList {...props} />;
-          }}
+          }
+        else{
+          return <Redirect to= "/login"/>
+        }}}
         />
         <Route
           path="/events/new"
@@ -72,10 +67,8 @@ class ApplicationViews extends Component {
             return <EventForm {...props} />;
           }}
         />
-        {/* <Route path="/login" component={Login} /> */}
       </React.Fragment>
     );
   }
 }
-
-export default ApplicationViews;
+export default ApplicationViews
