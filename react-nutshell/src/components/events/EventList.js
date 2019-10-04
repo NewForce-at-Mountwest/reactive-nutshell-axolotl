@@ -49,6 +49,16 @@ class EventList extends Component {
           >
             New Event
           </Button>
+          <Button
+            id="new-event"
+            variant="light"
+            size="lg"
+            onClick={() => {
+              this.props.history.push("/events/reports");
+            }}
+          >
+           View Reports
+          </Button>
         </section>
         <div className="container-cards">
           {this.state.events.map((event, index) => (

@@ -8,10 +8,10 @@ class EventEditForm extends Component {
     event: "",
     date: "",
     location: "",
-    estimateAttendance: "",
-    actualAttendance: "",
-    eventCost: "",
-    eventProceeds: ""
+    estimate: "",
+    actual: "",
+    cost: "",
+   proceeds: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -28,10 +28,10 @@ class EventEditForm extends Component {
       event: this.state.event,
       date: this.state.date,
       location: this.state.location,
-      estimateAttendance: this.state.estimate,
-      actualAttendance: this.state.actual,
-      eventCost: this.state.cost,
-      eventProceeds: this.state.proceeds
+      estimate: this.state.estimate,
+      actual: this.state.actual,
+      cost: this.state.cost,
+      proceeds: this.state.proceeds
     };
     // re direct to events list page
     EventManager.update(editedEvent).then(() =>
@@ -48,10 +48,10 @@ class EventEditForm extends Component {
         event: oneEvent.event,
         date: oneEvent.date,
         location: oneEvent.location,
-        estimateAttendance: oneEvent.estimate,
-        actualAttendance: oneEvent.actual,
-        eventCost: oneEvent.cost,
-        eventProceeds: oneEvent.proceeds,
+        estimate: oneEvent.estimate,
+        actual: oneEvent.actual,
+        cost: oneEvent.cost,
+        proceeds: oneEvent.proceeds,
         loadingstatus: false
       });
     });
@@ -93,7 +93,7 @@ class EventEditForm extends Component {
                 id="actual"
                 value={this.state.actual}
               />
-              <label htmlFor="attendance">Actual Attendance</label>{" "}
+              <label htmlFor="attendance">Actual Attendance</label>
               <input
                 type="text"
                 required
@@ -101,7 +101,7 @@ class EventEditForm extends Component {
                 id="estimate"
                 value={this.state.estimate}
               />
-              <label htmlFor="estimate">Estimate Attendance</label>{" "}
+              <label htmlFor="estimate">Estimate Attendance</label>
               <input
                 type="text"
                 required

@@ -10,6 +10,8 @@ import Register from "./auth/Register"
 import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
+import EventReport from "./eventReport/EventReport"
+
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false
@@ -74,7 +76,12 @@ class ApplicationViews extends Component {
             return <EventEditForm {...props} />;
           }}
         />
-        {/* <Route path="/login" component={Login} /> */}
+        <Route
+          path="/events/eventReport"
+          render={props => {
+            return <EventReport {...props} />;
+          }}
+        />
       </React.Fragment>
     );
   }

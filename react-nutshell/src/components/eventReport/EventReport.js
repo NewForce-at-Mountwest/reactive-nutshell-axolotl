@@ -15,3 +15,4 @@ class ReportEventBuild extends Component {
     loadingStatus: false
   };
 }
+export default ReportEventBuild
