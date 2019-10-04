@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 // Redirect
 import React, { Component } from "react";
-import Home from "./home/Home";
+import Home from "./home/home";
 import TaskList from "./tasks/TaskList";
 import TaskCard from "./tasks/TaskCard";
 import TaskForm from "./tasks/TaskForm";
