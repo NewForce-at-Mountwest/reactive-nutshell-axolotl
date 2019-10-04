@@ -1,9 +1,10 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/home";
-import Login from './auth/Login'
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
+import EventEditForm from "./events/EventEditForm";
+import Login from './auth/Login'
 import Register from "./auth/Register"
 import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
@@ -66,6 +67,13 @@ class ApplicationViews extends Component {
             return <EventForm {...props} />;
           }}
         />
+        <Route
+          path="/events/:eventId(\d+)/edit"
+          render={props => {
+            return <EventEditForm {...props} />;
+          }}
+        />
+        {/* <Route path="/login" component={Login} /> */}
       </React.Fragment>
     );
   }

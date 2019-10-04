@@ -1,0 +1,27 @@
+.card {
+    width: 35vw;
+    margin: 1em
+}
+.section-content{
+    display: flex;
+    align-content: center
+}
+/* styling for new event button */
+#new-event {
+    margin: 1em
+}
+/* styling for edit event button */
+#edit-btn {
+    margin: 1em
+}
+/* styling for delete event button */
+#delete-btn {
+    margin: 1em
+}
+.first-event{
+    background-color:lightblue;
+    width: 45vw;
+    height: 20vw;
+   font-weight: bolder;
+   font-size: 1.5em
+    }

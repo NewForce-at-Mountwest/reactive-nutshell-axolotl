@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import EventManager from "../../modules/EventManager";
+import { Button } from "react-bootstrap";
 
 class EventEditForm extends Component {
   // set initial state
   state = {
     event: "",
-    date: ""
+    date: "",
+    location: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -21,7 +23,7 @@ class EventEditForm extends Component {
       id: this.props.match.params.eventId,
       event: this.state.event,
       date: this.state.date,
-      active: true
+      location: this.state.location
     };
     // re direct to events list page
     EventManager.update(editedEvent).then(() =>
@@ -31,14 +33,16 @@ class EventEditForm extends Component {
 
   componentDidMount() {
     // get  event from json server to edit
-    EventManager.get(this.props.match.params.eventId).then(
-      event => {
-        this.setState({
-          event: event.event,
-          loadingstatus: false
-        });
-      }
-    );
+    console.log("component did mount -edit");
+    EventManager.get(this.props.match.params.eventId).then(oneEvent => {
+      console.log(oneEvent);
+      this.setState({
+        event: oneEvent.event,
+        date: oneEvent.date,
+        location: oneEvent.location,
+        loadingstatus: false
+      });
+    });
   }
   render() {
     return (
@@ -49,22 +53,36 @@ class EventEditForm extends Component {
               <input
                 type="text"
                 required
-                className="form-control"
                 onChange={this.handleFieldChange}
-                id="name"
-                value={this.state.name}
+                id="event"
+                value={this.state.event}
               />
-              <label htmlFor="name">Name</label>
-              <button
-                type="button"
-                disabled={this.state.loadingStatus}
-                onClick={this.updateExistingPatron}
-                className="btn btn-primary"
-              >
-                Submit
-              </button>
+              <label htmlFor="event">Event</label>
+              <input
+                type="date"
+                required
+                onChange={this.handleFieldChange}
+                id="date"
+                value={this.state.date}
+              />
+              <label htmlFor="date">Date</label>
+              <input
+                type="text"
+                required
+                onChange={this.handleFieldChange}
+                id="location"
+                value={this.state.location}
+              />
+              <label htmlFor="location">Location</label>
             </div>
           </fieldset>
+          <Button
+            variant="light"
+            disabled={this.state.loadingStatus}
+            onClick={this.updateExistingEvent}
+          >
+            Submit
+          </Button>
         </form>
       </>
     );

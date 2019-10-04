@@ -75,13 +75,45 @@
   "events": [
     {
       "id": 1,
-      "event": "Concert",
-      "date": "December 3, 2019"
+      "event": "Concert for Me",
+      "date": "2019-11-25",
+      "location": "The field"
     },
     {
+      "id": 2,
       "event": "Party",
+      "date": "2019-10-23",
+      "location": "The Hill"
+    },
+    {
+      "id": 4,
+      "event": "Bubble Party",
       "date": "2019-10-22",
-      "id": 2
+      "location": "SpongeBob's house"
+    },
+    {
+      "id": 5,
+      "event": "Food Party",
+      "date": "2019-11-22",
+      "location": "The trough"
+    },
+    {
+      "id": 6,
+      "event": "Meetup",
+      "date": "2019-11-12",
+      "location": "CoWorks"
+    },
+    {
+      "event": "Sallys Batmitzvah",
+      "date": "2020-03-12",
+      "location": "The Hotel",
+      "id": 7
+    },
+    {
+      "event": "Homecoming",
+      "date": "2019-10-05",
+      "location": "HHS",
+      "id": 8
     }
   ]
 }
