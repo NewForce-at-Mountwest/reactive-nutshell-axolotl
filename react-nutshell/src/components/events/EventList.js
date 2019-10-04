@@ -37,7 +37,7 @@ class EventList extends Component {
 
     return (
       <>
-        <section className="section-content">
+        <section className="event-section-content">
           {/* create button to create a new event on click of submit button */}
           <Button
             id="new-event"
