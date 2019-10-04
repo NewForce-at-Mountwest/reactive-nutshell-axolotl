@@ -32,12 +32,12 @@ class TaskForm extends Component {
    */
   constructNewTask = evt => {
     evt.preventDefault();
-    if (this.state.task === "" || this.state.completion === "") {
+    if (this.state.name === "" || this.state.completion === "") {
       window.alert("Please input task name and completion date");
     } else {
       this.setState({ loadingStatus: true });
       const task = {
-        name: this.state.task,
+        name: this.state.name,
         completion: this.state.completion,
         Id: +this.state.taskId // convert to number
       };

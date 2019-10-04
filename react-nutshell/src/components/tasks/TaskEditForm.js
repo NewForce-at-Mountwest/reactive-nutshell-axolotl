@@ -25,7 +25,7 @@ class TaskEditForm extends Component {
       completion: this.state.completion,
       userId: localStorage.getItem('userId')
     };
-
+console.log(this.state.name)
     TaskManager.update(editedTask).then(() =>
       this.props.history.push("/tasks")
     );
@@ -33,11 +33,16 @@ class TaskEditForm extends Component {
 
   componentDidMount() {
     TaskManager.getOne(this.props.match.params.taskId).then(tasks => {
-        this.setState({
-          name: tasks.task,
-          completion: tasks.completion,
-          loadingStatus: false,
-        })})};
+      this.setState({
+        name: tasks.name,
+        completion: tasks.completion,
+        loadingStatus: false,
+
+      })
+      console.log(tasks)
+    })
+
+  };
 
   render() {
     return (

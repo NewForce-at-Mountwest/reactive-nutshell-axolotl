@@ -22,7 +22,7 @@ class TaskCard extends Component {
 
               <h3>
                 Task:{" "}
-                <span className="card-taskname">{this.props.taskProp.task}</span>
+                <span className="card-taskname">{this.props.taskProp.name}</span>
               </h3>
               <p>Completion Date:{this.props.taskProp.completion}</p>
               <Link to={`/tasks/${this.props.taskProp.id}/edit`}>

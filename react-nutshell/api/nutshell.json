@@ -2,21 +2,21 @@
   "tasks": [
     {
       "id": 1,
-      "name": "Justin Warden",
+      "name": "cut grass!!!!",
       "completion": "999999",
       "userId": null
     },
     {
       "id": 2,
-      "name": "Roll in the Garbage!!!!",
+      "name": "Roll in the trash",
       "completion": "10/20/19",
       "userId": null
     },
     {
       "id": 3,
-      "userId": 3,
-      "task": "Eat the Garbage",
-      "completion": "10/30/19"
+      "name": "drain pool!!!!",
+      "completion": "10/10/19",
+      "userId": null
     }
   ],
   "users": [
@@ -37,6 +37,12 @@
       "email": "Kelli@Evans.com",
       "password": "123",
       "id": 4
+    },
+    {
+      "username": "justinwarden",
+      "email": "justin.warden@justinwarden.com",
+      "password": "123",
+      "id": 5
     }
   ],
   "news": [
