@@ -1,7 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 
 import React, { Component } from "react";
-import Home from "./home/Home";
+import Home from "./home/home";
 import Login from './auth/Login'
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
@@ -28,7 +28,7 @@ class ApplicationViews extends Component {
          if (this.isAuthenticated()){
           return <Home {...props}/>
         }else{ return <Redirect to="/login" /> } }} />
-        
+
         {/* News Routes */}
         <Route
           exact
