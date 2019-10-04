@@ -54,9 +54,7 @@ class EventList extends Component {
           {this.state.events.map((event, index) => (
             <EventCard
               key={event.id}
-              className = {if(${index})=== 0{className= "first-event"} {
-                className= "container-cards"}
-              }
+              indexProp= {index}
               event={event}
               deleteEvent={this.deleteEvent}
               {...this.props}

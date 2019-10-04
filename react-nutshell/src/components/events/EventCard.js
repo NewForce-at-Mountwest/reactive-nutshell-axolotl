@@ -6,7 +6,7 @@ class EventCard extends Component {
   render() {
     return (
       <div className="card">
-        <div className="card-content">
+        <div className={this.props.indexProp === 0 ? "first-event" : "card-content"}>
           <h4>
             Event Name:{" "}
             <span className="card-event">{this.props.event.event}</span>
