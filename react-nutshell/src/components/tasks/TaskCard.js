@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TaskManager from "../../modules/TaskManager";
 class TaskCard extends Component {
-
-    handleDelete = () => {
-
-        //invoke the delete function in AnimalManger and re-direct to the animal list.
-        this.setState({loadingStatus: true})
-        TaskManager.delete(this.props.animalId)
-        .then(() => this.props.history.push("/animals"))
+    state = {
+        name: "",
+        completion: "",
+        loadingStatus: true,
     }
+    handleDelete = () => {
+        //invoke the delete function in TaskManger and re-direct to the animal list.
+        this.setState({loadingStatus: true})
+        TaskManager.delete(this.props.taskId)
+        .then(() => this.props.history.push("/tasks"))
+    }
+
     render() {
         return (
           <div className="card">
@@ -23,7 +27,7 @@ class TaskCard extends Component {
               <Link to={`/tasks/${this.props.taskProp.id}/TaskEditForm`}>
                 <button>Edit</button>
               </Link>
-              <button>Complete</button>
+              <button type="button"onClick={this.handleDelete}>Delete</button>
             </div>
           </div>
         );
