@@ -20,6 +20,12 @@
       "email": "Kelli@Evans.com",
       "password": "123",
       "id": 4
+    },
+    {
+      "username": "abc",
+      "email": "abc",
+      "password": "123",
+      "id": 5
     }
   ],
   "news": [
@@ -71,11 +77,20 @@
       "url": "https://local.theonion.com/child-pointing-out-cow-on-side-of-road-must-think-paren-1838641856"
     },
     {
-      "title": "321",
-      "synopsis": "321",
-      "url": "321",
-      "date": 1570200803097,
-      "id": 7
+      "title": "123",
+      "synopsis": "123",
+      "url": "123",
+      "date": "2019-10-07",
+      "id": 7,
+      "archived": true
+    },
+    {
+      "title": "123",
+      "synopsis": "123",
+      "url": "123",
+      "date": "2019-10-08",
+      "id": 8,
+      "archived": true
     }
   ],
   "events": [
