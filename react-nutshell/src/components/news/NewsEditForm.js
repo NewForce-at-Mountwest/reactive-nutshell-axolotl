@@ -8,6 +8,7 @@ class NewsEditForm extends Component {
     title: "",
     synopsis: "",
     url: "",
+    date: "",
     loadingStatus: true
   };
 
@@ -23,6 +24,7 @@ class NewsEditForm extends Component {
         title: news.title,
         synopsis: news.synopsis,
         url: news.url,
+        date: news.date,
         loadingStatus: false
       });
     });
@@ -35,6 +37,7 @@ class NewsEditForm extends Component {
       id: this.props.match.params.newsId,
       title: this.state.title,
       synopsis: this.state.synopsis,
+      date: this.state.date,
       url: this.state.url
     };
 
@@ -47,6 +50,15 @@ class NewsEditForm extends Component {
         <form>
           <fieldset>
             <div className="formgrid">
+              <label htmlFor="date">Article Date</label>
+              <input
+                type="date"
+                required
+                onChange={this.handleFieldChange}
+                id="date"
+                placeholder="Date"
+              />
+              <label htmlFor="title">Title</label>
               <input
                 type="text"
                 required
@@ -55,8 +67,7 @@ class NewsEditForm extends Component {
                 id="title"
                 value={this.state.title}
               />
-              <label htmlFor="title">Title</label>
-
+              <label htmlFor="synopsis">Synopsis</label>
               <input
                 type="text"
                 required
@@ -65,8 +76,7 @@ class NewsEditForm extends Component {
                 id="synopsis"
                 value={this.state.synopsis}
               />
-              <label htmlFor="synopsis">Synopsis</label>
-
+              <label htmlFor="url">URL</label>
               <input
                 type="text"
                 required
@@ -75,7 +85,6 @@ class NewsEditForm extends Component {
                 id="url"
                 value={this.state.url}
               />
-              <label htmlFor="url">URL</label>
             </div>
 
             <div className="alignRight">

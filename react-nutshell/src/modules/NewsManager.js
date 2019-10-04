@@ -6,7 +6,7 @@ export default {
   },
 
   getAll() {
-    return fetch(`${remoteURL}/news`).then(result => result.json());
+    return fetch(`${remoteURL}/news?_sort=date&_order=desc`).then(result => result.json());
   },
 
   softDelete(id) {
@@ -20,7 +20,7 @@ export default {
   },
 
   post(newArticle) {
-    return fetch(`${remoteURL}/news`, {
+    return fetch(`${remoteURL}/news?_sort=date&_order=desc`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -28,7 +28,7 @@ export default {
       body: JSON.stringify(newArticle)
     }).then(data => data.json());
   },
-  
+
   update(editedNews) {
     return fetch(`${remoteURL}/news/${editedNews.id}`, {
       method: "PUT",
