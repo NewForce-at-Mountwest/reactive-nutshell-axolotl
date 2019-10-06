@@ -5,6 +5,7 @@ import TaskManager from "../../modules/TaskManager";
 class TaskEditForm extends Component {
   //set the initial state
   state = {
+    id: "",
     name: "",
     completion: "",
     userId: ""
@@ -69,19 +70,6 @@ console.log(this.state.name)
                 id="completion"
                 value={this.state.completion}
               />
-
-              {/* <select
-                className="form-control"
-                id="taskId"
-                value={this.state.taskId}
-                onChange={this.handleFieldChange}
-              >
-                {this.state.tasks.map(tasks => (
-                  <option key={tasks.id} value={tasks.id}>
-                    {tasks.name}
-                  </option>
-                ))}
-              </select> */}
             </div>
             <div className="alignRight">
               <button
