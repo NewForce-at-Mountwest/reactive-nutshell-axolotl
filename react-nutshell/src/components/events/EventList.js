@@ -23,7 +23,6 @@ class EventList extends Component {
   };
 
   componentDidMount() {
-    console.log("EVENT LIST: ComponentDidMount");
     //call getAll from EventManager to bring back all events for a user and hang on to that data; put it in state
     EventManager.getAll().then(events => {
       this.setState({
@@ -33,8 +32,6 @@ class EventList extends Component {
   }
   // render the events and return the keys to be used in the event card
   render() {
-    console.log("EventList: Render");
-
     return (
       <>
         <section className="event-section-content">
