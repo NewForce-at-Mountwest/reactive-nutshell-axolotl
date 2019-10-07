@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import LoginManager from "../../modules/LoginManager";
-import { isUndefined } from "util";
 class Login extends Component {
 
   // Set initial state
@@ -21,7 +20,6 @@ class Login extends Component {
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
     //set State for remember
     this.setState({
       remember: value
