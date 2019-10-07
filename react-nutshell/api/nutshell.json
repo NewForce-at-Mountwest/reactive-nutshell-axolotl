@@ -1,29 +1,6 @@
 {
   "tasks": [
-    {
-      "id": 1,
-      "name": "eat a bat!!!!!!!",
-      "completion": "1111111",
-      "userId": "5"
-    },
-    {
-      "id": 2,
-      "name": "eat a cat!!!!!!",
-      "completion": "222222",
-      "userId": "5"
-    },
-    {
-      "id": 3,
-      "name": "eat a rat!!!!!!",
-      "completion": "3333333",
-      "userId": "5"
-    },
-    {
-      "id": 4,
-      "name": "eat a gnat!!!!!!!",
-      "completion": "4444444",
-      "userId": "5"
-    }
+    
   ],
   "users": [
     {
@@ -43,6 +20,12 @@
       "email": "123",
       "password": "123",
       "id": 4
+    },
+    {
+      "username": "justinwarden",
+      "email": "justinwarden@outlook.com",
+      "password": "123",
+      "id": 5
     }
   ],
   "news": [
