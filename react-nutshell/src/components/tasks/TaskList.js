@@ -8,10 +8,22 @@ class TaskList extends Component {
   state = {
     tasks: []
   };
+// delete function
 
+  handleDelete = (id) => {
+    this.setState({loadingStatus: true})
+    TaskManager.delete(id)
+    .then(TaskManager.getAll)
+    .then(returnedTask => {
+      this.setState({
+        tasks: returnedTask
+      })
+    })
+  }
+
+// get all tasks from the database
   componentDidMount() {
     console.log("TASK LIST: ComponentDidMount");
-    //getAll from AnimalManager and hang on to that data; put it in state
     TaskManager.getAll().then(tasksFromDatabase => {
       console.log(tasksFromDatabase);
       this.setState({
@@ -19,7 +31,7 @@ class TaskList extends Component {
       });
     });
   }
-
+// Add task form
   render() {
     console.log("TASK LIST: Render");
 
@@ -32,13 +44,12 @@ class TaskList extends Component {
             onClick={() => {
               this.props.history.push("/tasks/TaskForm");
             }}
->
-            ADD TASK
+ >ADD TASK
           </button>
         </section>
         <div className="container-cards">
           {this.state.tasks.map(singleTask => (
-            <TaskCard key={singleTask.id} taskProp={singleTask} />
+            <TaskCard key={singleTask.id} taskProp={singleTask} handleDelete={this.handleDelete} />
           ))}
         </div>
       </>

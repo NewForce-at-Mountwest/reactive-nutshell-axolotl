@@ -15,8 +15,6 @@ import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
 class ApplicationViews extends Component {
-  // Check if credentials are in local storage
-  //returns true/false
   isAuthenticated = () => localStorage.getItem("userId") !== null;
   render() {
     return (

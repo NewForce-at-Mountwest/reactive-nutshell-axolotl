@@ -7,9 +7,10 @@ class TaskForm extends Component {
     name: "",
     completion: "",
     loadingStatus: false,
-    taskId: ""
+    // userId: ""
   };
 
+// change the input fields
   handleFieldChange = evt => {
     console.log("this is event.target.id", evt.target.id);
     console.log("this is event.target.value", evt.target.value);
@@ -28,7 +29,8 @@ class TaskForm extends Component {
     })
   }
 
-  /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
+  /*  Local method for validation, set loadingStatus, create task object, call
+  TaskManager post method, and redirect to the full task list
    */
   constructNewTask = evt => {
     evt.preventDefault();
@@ -39,16 +41,15 @@ class TaskForm extends Component {
       const task = {
         name: this.state.name,
         completion: this.state.completion,
-        Id: +this.state.taskId // convert to number
       };
 
-      // Create the animal and redirect user to animal list
+      // Create the task and redirect user to task list
       TaskManager.post(task).then(() =>
         this.props.history.push("/tasks")
       );
     }
   };
-
+// input form
   render() {
     return (
       <>

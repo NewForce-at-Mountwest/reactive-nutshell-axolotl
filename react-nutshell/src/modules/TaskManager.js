@@ -1,5 +1,5 @@
 const remoteURL = "http://localhost:1234";
-
+// Task Manager
 export default {
   getOne(id) {
     return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json());
@@ -9,9 +9,10 @@ export default {
   },
   delete(id) {
     return fetch(`${remoteURL}/tasks/${id}`, {
-      method: "DELETE"
-    }).then(result => result.json());
+      method: "DELETE",
+    }).then(data => data.json());
   },
+
   post(newTask) {
     return fetch(`${remoteURL}/tasks`, {
       method: "POST",

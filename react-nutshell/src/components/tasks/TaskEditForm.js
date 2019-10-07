@@ -8,15 +8,15 @@ class TaskEditForm extends Component {
     id: "",
     name: "",
     completion: "",
-    userId: ""
+    // userId: ""
   };
-
+// The state to change
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
-
+// update the state
   updateExistingTask = evt => {
     evt.preventDefault();
     this.setState({ loadingStatus: true });
@@ -31,7 +31,7 @@ console.log(this.state.name)
       this.props.history.push("/tasks")
     );
   };
-
+// get one task
   componentDidMount() {
     TaskManager.getOne(this.props.match.params.taskId).then(tasks => {
       this.setState({
@@ -44,7 +44,7 @@ console.log(this.state.name)
     })
 
   };
-
+// task form
   render() {
     return (
       <>
