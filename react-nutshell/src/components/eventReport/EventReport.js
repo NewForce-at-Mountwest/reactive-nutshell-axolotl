@@ -15,4 +15,20 @@ class ReportEventBuild extends Component {
     loadingStatus: false
   };
 }
+componentDidMount() {
+  console.log("EVENT REPORT: ComponentDidMount");
+  //call getAll from EventManager to bring back all events for a user and hang on to that data; put it in state
+  EventManager.getAll().then(events => {
+    this.setState({
+      events: events
+    });
+  });
+}
+
+// render the chart
+render () {
+
+  return ()
+}
+
 export default ReportEventBuild
