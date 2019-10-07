@@ -51,7 +51,7 @@ class EventList extends Component {
             variant="light"
             size="lg"
             onClick={() => {
-              this.props.history.push("/events/reports");
+              this.props.history.push("/eventReport/report");
             }}
           >
            View Reports

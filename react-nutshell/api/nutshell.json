@@ -1,7 +1,5 @@
 {
-  "tasks": [
-    
-  ],
+  "tasks": [],
   "users": [
     {
       "username": "b",
@@ -107,50 +105,50 @@
       "event": "Concert for Me",
       "date": "2019-11-25",
       "location": "The field",
-      "estimate": "250",
-      "actual": "350",
-      "cost": "500",
-      "proceeds": "7500"
+      "estimate": 250,
+      "actual": 350,
+      "cost": 500,
+      "proceeds": 7500
     },
     {
       "id": 4,
       "event": "Bubble Party",
       "date": "2019-10-22",
       "location": "SpongeBob's house",
-      "estimate": "125",
-      "actual": "110",
-      "cost": "250",
-      "proceeds": "350"
+      "estimate": 125,
+      "actual": 110,
+      "cost": 250,
+      "proceeds": 350
     },
     {
       "id": 5,
       "event": "Food Party",
       "date": "2019-11-22",
       "location": "The trough",
-      "estimate": "75",
-      "actual": "50",
-      "cost": "150",
-      "proceeds": "100"
+      "estimate": 75,
+      "actual": 50,
+      "cost": 150,
+      "proceeds": 100
     },
     {
       "id": 6,
       "event": "Meetup",
       "date": "2019-11-12",
       "location": "CoWorks",
-      "estimate": "25",
-      "actual": "20",
-      "cost": "100",
-      "proceeds": "80"
+      "estimate": 25,
+      "actual": 20,
+      "cost": 100,
+      "proceeds": 80
     },
     {
       "id": 8,
       "event": "Homecoming",
       "date": "2019-10-05",
       "location": "HHS",
-      "estimate": "500",
-      "actual": "250",
-      "cost": "500",
-      "proceeds": "850"
+      "estimate": 500,
+      "actual": 250,
+      "cost": 500,
+      "proceeds": 850
     }
   ]
 }

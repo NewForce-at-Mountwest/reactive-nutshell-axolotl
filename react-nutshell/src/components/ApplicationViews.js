@@ -14,7 +14,7 @@ import Register from "./auth/Register"
 import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
-import EventReportBuild from "./eventReport/EventReport"
+import EventReportBuild from "./eventReport/EventReport";
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("userId") !== null;
@@ -116,7 +116,7 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          path="/events/eventReport"
+          path="/eventReport/report"
           render={props => {
             return <EventReportBuild {...props} />;
           }}

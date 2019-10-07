@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import EventManager from "../../modules/EventManager";
-import {line, bar, Line} from "react-chartjs-2"
+// import {line, bar, Line} from "react-chartjs-2"
+import EventReportCard from "../eventReport/EventReportCard"
 
 // build component to create report
 class EventReportBuild extends Component {
   // set the object keys in state
   state = {
-    events: [],
-
+    events: []
   };
-// build chart to track attendance
 
 componentDidMount() {
   console.log("EVENT REPORT: ComponentDidMount");
@@ -17,22 +16,28 @@ componentDidMount() {
   EventManager.getAll().then(events => {
     this.setState({
       events: events
-    });
+    })
   });
 }
-
-// render the chart
+// render the statistics by event on the event report cards
 render () {
-
   return (
-    // call function to build the chart
     <>
     <h2>Event Statistics</h2>
     <div>
-      <Line
-      options= {{responsive: true}}
-      data={}
-/>
+    <div className="container-cards">
+          {this.state.events.map((event) => (
+            <EventReportCard
+              key={event.id}
+              event={event}
+              {...this.props}
+            />
+          ))}
+        </div>
+      {/* <Line
+      // options= {{responsive: true}}
+      // data={}
+/> */}
     </div>
     </>
   )

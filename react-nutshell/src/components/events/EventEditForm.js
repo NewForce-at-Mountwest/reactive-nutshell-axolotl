@@ -11,7 +11,7 @@ class EventEditForm extends Component {
     estimate: "",
     actual: "",
     cost: "",
-   proceeds: ""
+    proceeds: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -88,7 +88,6 @@ class EventEditForm extends Component {
               <label htmlFor="location">Location</label>
               <input
                 type="text"
-                required
                 onChange={this.handleFieldChange}
                 id="actual"
                 value={this.state.actual}
@@ -111,7 +110,7 @@ class EventEditForm extends Component {
               />
               <label htmlFor="cost">Event Cost</label>
               <input
-                type="text"
+                type="number"
                 required
                 onChange={this.handleFieldChange}
                 id="proceeds"
