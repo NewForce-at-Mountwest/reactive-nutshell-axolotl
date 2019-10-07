@@ -5,7 +5,6 @@ import TaskList from "./tasks/TaskList";
 import TaskCard from "./tasks/TaskCard";
 import TaskForm from "./tasks/TaskForm";
 import TaskEditForm from "./tasks/TaskEditForm";
-import Login from './auth/Login'
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
 import EventEditForm from "./events/EventEditForm";

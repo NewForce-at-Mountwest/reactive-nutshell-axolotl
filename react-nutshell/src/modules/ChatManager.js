@@ -1,38 +1,34 @@
-const remoteURL = "http://localhost:1234"
-
+const remoteURL = "http://localhost:1234";
+// Chat Manager
 export default {
-  // get one event from the json db
-  get(id) {
-    return fetch(`${remoteURL}/chats/${id}`).then(result => result.json())
+  getOne(id) {
+    return fetch(`${remoteURL}/messages/${id}`).then(result => result.json());
   },
-  // get all the chats
   getAll() {
-    return fetch(`${remoteURL}/chats/messages`).then(result => result.json())
+    return fetch(`${remoteURL}/messages?_expand=user`).then(result => result.json());
   },
-  // post a new chat to json db
+  delete(id) {
+    return fetch(`${remoteURL}/messages/${id}`, {
+      method: "DELETE",
+    }).then(data => data.json());
+  },
+
   post(newChat) {
-    return fetch(`${remoteURL}/chats`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newChat)
-    }).then(data => data.json())
-},
-// return updated chat to json db
-update(editedChat)  {
-  return fetch(`${remoteURL}/chats/${editedChat.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(editedChat)
-  }).then(data => data.json());
-},
-// delete one single event from the json db
-delete(id) {
-  return fetch(`${remoteURL}/chats/${id}`, {
-    method: "DELETE"})
-    .then(result => result.json())
+    return fetch(`${remoteURL}/messages`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newChat)
+    }).then(data => data.json());
+  },
+  update(editedChat) {
+    return fetch(`${remoteURL}/messages/${editedChat.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedChat)
+    }).then(data => data.json());
   }
-}
+};

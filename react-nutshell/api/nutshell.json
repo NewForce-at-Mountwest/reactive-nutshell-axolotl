@@ -1,7 +1,5 @@
 {
-  "tasks": [
-    
-  ],
+  "tasks": [],
   "users": [
     {
       "username": "b",
@@ -145,11 +143,27 @@
       "id": 8
     }
   ],
-  "chat": [
+  "messages": [
     {
       "message": "whats up?",
       "id": 1,
       "userId": 1
+    },
+    {
+      "message": "helllo?",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "message": "helllo?",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "message": "??",
+      "userId": 1,
+      "id": 4
     }
-  ]
+  ],
+  "friends": []
 }

@@ -1,59 +1,60 @@
-import React, { Component } from "react";
-//import the components we will need
-import ChatCard from "./ChatCard";
-import ChatManager from "../../modules/ChatManager";
-import { Button } from "react-bootstrap";
+import React, { Component } from 'react';
+import ChatCard from './ChatCard'
+import ChatManager from '../../modules/ChatManager'
+export default class ChatList extends Component {
+	state = {
+		userId: localStorage.getItem('userId'),
+        messages: [],
+        messageInput: ""
+	};
+	scrollToBottom = () => {
+		const chatDiv = document.getElementById('chat-messages');
+		chatDiv.scrollTop = chatDiv.scrollHeight;
+	};
+	handleFieldChange = (e) => {
+		const stateToChange = {};
+		stateToChange[e.target.id] = e.target.value;
+		this.setState(stateToChange);
+	};
+	Message = (e) => {
+		e.preventDefault();
+		const item = {
+			message: this.state.messageInput,
+            userId: +this.state.userId,
 
-class ChatList extends Component {
-  //define what this component needs to render
-  // set the array of Chats in state
-  state = {
-    Chats: []
-  };
-  // method to delete one Chat
-  deleteChat = id => {
-    ChatManager.delete(id).then(() => {
-      ChatManager.getAll().then(Chats => {
-        this.setState({
-          Chats: Chats
-        });
-      });
-    });
-  };
-
-  componentDidMount() {
-    console.log("Chat LIST: ComponentDidMount");
-    //call getAll from ChatManager to bring back all Chats for a user and hang on to that data; put it in state
-    ChatManager.getAll().then(Chats => {
-      this.setState({
-        Chats: Chats
-      });
-    });
-  }
-  // render the Chats and return the keys to be used in the Chat card
-  render() {
-    console.log("ChatList: Render");
-
-    return (
-      <>
-        <section className="section-content">
-          {/* create button to create a new Chat on click of submit button */}
-        <h1>ChatRoom</h1>
-        </section>
-        <div className="container-cards">
-          {this.state.Chats.map((Chat, index) => (
-            <ChatCard
-              key={Chat.id}
-              indexProp= {index}
-              Chat={Chat}
-              deleteChat={this.deleteChat}
-              {...this.props}
-            />
-          ))}
-        </div>
-      </>
-    );
-  }
+		};
+		ChatManager.post(item).then(ChatManager.getAll).then(newMsgs=> this.setState({messages: newMsgs})
+        )}
+	componentDidMount() {
+        ChatManager.getAll().then(messagesFromDatabase => {
+            console.log(messagesFromDatabase);
+            this.setState({
+              messages: messagesFromDatabase
+            });
+          })
+	}
+	render() {
+		return (
+			<React.Fragment>
+				<div className="chat-messages" id="chat-messages" key={this.state.userId}>
+					{this.state.messages.map((message) => {
+						return <ChatCard {...this.props} message={message} route={this.props.route} />;
+					})}
+				</div>
+				<div className="chat-input">
+					<form className="form-control chat">
+						<input
+							type="text"
+							id="messageInput"
+							placeholder="Don't be shy! Say Hi!"
+							onChange={this.handleFieldChange}
+						/>
+						<button type="submit" onClick={this.Message} className="btn size1button">
+							Submit
+						</button>
+					</form>
+				</div>
+			</React.Fragment>
+		);
+	}
 }
-
-export default ChatList;
