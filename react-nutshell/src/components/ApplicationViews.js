@@ -1,6 +1,11 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/home";
+import TaskList from "./tasks/TaskList";
+import TaskCard from "./tasks/TaskCard";
+import TaskForm from "./tasks/TaskForm";
+import TaskEditForm from "./tasks/TaskEditForm";
+import Login from './auth/Login'
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
 import EventEditForm from "./events/EventEditForm";
@@ -11,13 +16,39 @@ import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
 class ApplicationViews extends Component {
-  // Check if credentials are in local storage
-  //returns true/false
-  //Authentication for Logged in User
-  isAuthenticated = () => localStorage.getItem("userId") !== null
-    render() {
-      return (
-        <React.Fragment>
+  isAuthenticated = () => localStorage.getItem("userId") !== null;
+  render() {
+    return (
+      <React.Fragment>
+
+        <Route
+          exact
+          path="/tasks/TaskCard"
+          render={props => {
+            return <TaskCard {...props}
+            taskId={parseInt(props.match.params.taskId)}
+              />
+          }}
+        />
+        <Route
+          exact
+          path="/tasks/:taskId(\d+)/edit"
+          render={props => {
+            return <TaskEditForm {...props}
+            taskId={parseInt(props.match.params.taskId)}
+              />
+          }}
+        />
+        <Route
+          exact
+          path="/tasks/TaskForm"
+          render={props => {
+            return <TaskForm {...props}
+            taskId={parseInt(props.match.params.taskId)}
+              />
+          }}
+        />
+
           {/* Login Route */}
             <Route exact path="/login" component={Login} />
 
@@ -27,7 +58,7 @@ class ApplicationViews extends Component {
             {/*Home Route*/}
           <Route exact path="/home" render={(props) => {
          if (this.isAuthenticated()){
-          return <Home {...props}/>
+          return <Home {...props} taskId={parseInt(props.match.params.taskId)}/>
         }else{ return <Redirect to="/login" /> } }} />
 
         {/* News Routes */}
@@ -46,7 +77,16 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          path="/news/:newsId(\d+)/edit"
+          exact
+          path="/tasks"
+          render={props => {
+            return <TaskList {...props}
+            taskId={parseInt(props.match.params.taskId)}/>
+          }}
+              />
+
+              <Route
+          exact path="/news/:newsId(\d+)/edit"
           render={props => {
             return <NewsEditForm {...props} />;
           }}
