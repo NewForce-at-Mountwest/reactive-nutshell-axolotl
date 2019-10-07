@@ -10,9 +10,14 @@ class Home extends Component {
   render() {
     return (
       <>
-      <h1>E.T. Phone Home</h1>
+      <h1>Click the tabs to view your personal news, tasks and events! </h1>
 
-    <button type="submit" onClick={this.handleLogOut}>Logout</button></>
+    <button type="submit" onClick={this.handleLogOut}>Logout</button>
+
+    <img src="maxresdefault.jpg" alt="nutshell"/>
+
+    </>
+
     )
   }
 }
