@@ -11,6 +11,8 @@ class Home extends Component {
     return (
       <>
       <h1>Click the tabs to view your personal news, tasks and events! </h1>
+      
+      <img src="maxresdefault.jpg" alt="nutshell"/>
 
     <button type="submit" onClick={this.handleLogOut}>Logout</button></>
     )
