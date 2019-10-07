@@ -7,7 +7,11 @@ class EventEditForm extends Component {
   state = {
     event: "",
     date: "",
-    location: ""
+    location: "",
+    estimate: "",
+    actual: "",
+    cost: "",
+    proceeds: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -23,7 +27,11 @@ class EventEditForm extends Component {
       id: this.props.match.params.eventId,
       event: this.state.event,
       date: this.state.date,
-      location: this.state.location
+      location: this.state.location,
+      estimate: this.state.estimate,
+      actual: this.state.actual,
+      cost: this.state.cost,
+      proceeds: this.state.proceeds
     };
     // re direct to events list page
     EventManager.update(editedEvent).then(() =>
@@ -40,6 +48,10 @@ class EventEditForm extends Component {
         event: oneEvent.event,
         date: oneEvent.date,
         location: oneEvent.location,
+        estimate: oneEvent.estimate,
+        actual: oneEvent.actual,
+        cost: oneEvent.cost,
+        proceeds: oneEvent.proceeds,
         loadingstatus: false
       });
     });
@@ -74,6 +86,37 @@ class EventEditForm extends Component {
                 value={this.state.location}
               />
               <label htmlFor="location">Location</label>
+              <input
+                type="text"
+                onChange={this.handleFieldChange}
+                id="actual"
+                value={this.state.actual}
+              />
+              <label htmlFor="attendance">Actual Attendance</label>
+              <input
+                type="text"
+                required
+                onChange={this.handleFieldChange}
+                id="estimate"
+                value={this.state.estimate}
+              />
+              <label htmlFor="estimate">Estimate Attendance</label>
+              <input
+                type="text"
+                required
+                onChange={this.handleFieldChange}
+                id="cost"
+                value={this.state.cost}
+              />
+              <label htmlFor="cost">Event Cost</label>
+              <input
+                type="number"
+                required
+                onChange={this.handleFieldChange}
+                id="proceeds"
+                value={this.state.proceeds}
+              />
+              <label htmlFor="proceeds">Event Proceeds</label>
             </div>
           </fieldset>
           <Button

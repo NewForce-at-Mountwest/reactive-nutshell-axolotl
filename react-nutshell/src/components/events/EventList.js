@@ -23,7 +23,6 @@ class EventList extends Component {
   };
 
   componentDidMount() {
-    console.log("EVENT LIST: ComponentDidMount");
     //call getAll from EventManager to bring back all events for a user and hang on to that data; put it in state
     EventManager.getAll().then(events => {
       this.setState({
@@ -33,11 +32,9 @@ class EventList extends Component {
   }
   // render the events and return the keys to be used in the event card
   render() {
-    console.log("EventList: Render");
-
     return (
       <>
-        <section className="section-content">
+        <section className="event-section-content">
           {/* create button to create a new event on click of submit button */}
           <Button
             id="new-event"
@@ -48,6 +45,16 @@ class EventList extends Component {
             }}
           >
             New Event
+          </Button>
+          <Button
+            id="new-event"
+            variant="light"
+            size="lg"
+            onClick={() => {
+              this.props.history.push("/eventReport/report");
+            }}
+          >
+           View Reports
           </Button>
         </section>
         <div className="container-cards">
