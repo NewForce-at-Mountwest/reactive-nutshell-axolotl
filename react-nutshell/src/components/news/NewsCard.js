@@ -11,8 +11,8 @@ class NewsCard extends Component {
             {" "}
             <span className="card-title">{this.props.newsProp.title}</span>
           </h3>
-          <br></br>
-          <p>{this.props.newsProp.date}</p>
+          {/* <br></br>
+          <p>{this.props.newsProp.date}</p> */}
           <br>
           </br>
           <p>{this.props.newsProp.synopsis}</p>
