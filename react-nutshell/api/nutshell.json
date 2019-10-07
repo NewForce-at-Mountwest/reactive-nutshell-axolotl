@@ -104,43 +104,51 @@
       "id": 1,
       "event": "Concert for Me",
       "date": "2019-11-25",
-      "location": "The field"
-    },
-    {
-      "id": 2,
-      "event": "Party",
-      "date": "2019-10-23",
-      "location": "The Hill"
+      "location": "The field",
+      "estimate": 250,
+      "actual": 350,
+      "cost": 500,
+      "proceeds": 7500
     },
     {
       "id": 4,
       "event": "Bubble Party",
       "date": "2019-10-22",
-      "location": "SpongeBob's house"
+      "location": "SpongeBob's house",
+      "estimate": 125,
+      "actual": 110,
+      "cost": 250,
+      "proceeds": 350
     },
     {
       "id": 5,
       "event": "Food Party",
       "date": "2019-11-22",
-      "location": "The trough"
+      "location": "The trough",
+      "estimate": 75,
+      "actual": 50,
+      "cost": 150,
+      "proceeds": 100
     },
     {
       "id": 6,
       "event": "Meetup",
       "date": "2019-11-12",
-      "location": "CoWorks"
+      "location": "CoWorks",
+      "estimate": 25,
+      "actual": 20,
+      "cost": 100,
+      "proceeds": 80
     },
     {
-      "event": "Sallys Batmitzvah",
-      "date": "2020-03-12",
-      "location": "The Hotel",
-      "id": 7
-    },
-    {
+      "id": 8,
       "event": "Homecoming",
       "date": "2019-10-05",
       "location": "HHS",
-      "id": 8
+      "estimate": 500,
+      "actual": 250,
+      "cost": 500,
+      "proceeds": 850
     }
   ],
   "messages": [

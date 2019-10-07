@@ -7,6 +7,10 @@ class EventForm extends Component {
     event: "",
     date: "",
     location: "",
+    actual: 0,
+    estimate: 0,
+    cost:0,
+    proceeds: 0,
     loadingStatus: false
   };
 
@@ -27,7 +31,11 @@ class EventForm extends Component {
       const event = {
         event: this.state.event,
         date: this.state.date,
-        location: this.state.location
+        location: this.state.location,
+        actual: this.state.actual,
+        estimate: this.state.estimate,
+        cost: this.state.cost,
+        proceeds: this.state.proceeds
       };
 
       // Create the event and redirect user to event list
@@ -66,6 +74,38 @@ class EventForm extends Component {
                 placeholder="Event Location"
               />
               <label htmlFor="location">Event Location</label>
+              <input
+                type="number"
+                required
+                onChange={this.handleFieldChange}
+                id="actual"
+                placeholder="Actual Attendance"
+              />
+              <label htmlFor="actual">Actual Attendance</label>
+              <input
+                type="number"
+                required
+                onChange={this.handleFieldChange}
+                id="actual"
+                placeholder="Estimate Attendance"
+              />
+              <label htmlFor="estimate">Estimate Attendance</label>
+              <input
+                type="number"
+                required
+                onChange={this.handleFieldChange}
+                id="cost"
+                placeholder="Event Cost"
+              />
+              <label htmlFor="cost">Event Cost</label>
+              <input
+                type="number"
+                required
+                onChange={this.handleFieldChange}
+                id="proceeds"
+                placeholder="Event Proceeds"
+              />
+              <label htmlFor="proceeds">Event Proceeds</label>
             </div>
             <div className="alignRight">
               {/* button to submit new wvent and call method to add to json db */}

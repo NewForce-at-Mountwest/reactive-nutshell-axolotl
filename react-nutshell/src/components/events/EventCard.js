@@ -13,6 +13,11 @@ class EventCard extends Component {
           </h4>
           <p>Date: {this.props.event.date}</p>
           <p>Location: {this.props.event.location}</p>
+          <p>Estimated Attendance: {this.props.event.estimate}</p>
+          <p>Actual Attendance: {this.props.event.actual}</p>
+          <p>Event Cost: {this.props.event.cost}</p>
+          <p>Event Proceeds: {this.props.event.proceeds}</p>
+
           {/* button to render the event edit form  */}
           <Button
             variant="light"
