@@ -4,6 +4,7 @@ import Home from "./home/home";
 import EventList from "./events/EventList";
 import EventForm from "./events/EventForm";
 import EventEditForm from "./events/EventEditForm";
+import ChatList from './chat/ChatList'
 import Login from './auth/Login'
 import Register from "./auth/Register"
 import NewsList from "./news/NewsList";
@@ -56,6 +57,17 @@ class ApplicationViews extends Component {
           render={props => {
             if (this.isAuthenticated()){
             return <EventList {...props} />;
+          }
+        else{
+          return <Redirect to= "/login"/>
+        }}}
+        />
+          <Route
+          exact
+          path="/chat"
+          render={props => {
+            if (this.isAuthenticated()){
+            return <ChatList {...props} />;
           }
         else{
           return <Redirect to= "/login"/>

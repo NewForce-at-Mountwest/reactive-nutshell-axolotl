@@ -121,5 +121,12 @@
       "location": "HHS",
       "id": 8
     }
+  ],
+  "chat": [
+    {
+      "message": "whats up?",
+      "id": 1,
+      "userId": 1
+    }
   ]
 }
