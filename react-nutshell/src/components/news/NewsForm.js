@@ -7,14 +7,15 @@ class NewsForm extends Component {
     title: "",
     synopsis: "",
     url: "",
+    date: "",
     loadingStatus: false
   };
 
-//   componentDidMount() {
-//     NewsManager.getAll().then(parsedNews => {
-//       this.setState({ newss: parsedNews});
-//     });
-//   }
+  //   componentDidMount() {
+  //     NewsManager.getAll().then(parsedNews => {
+  //       this.setState({ newss: parsedNews});
+  //     });
+  //   }
 
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -26,20 +27,24 @@ class NewsForm extends Component {
    */
   constructNewArticle = evt => {
     evt.preventDefault();
-    if (this.state.title === "" || this.state.synopsis === "" || this.state.url === "") {
+    if (
+      this.state.title === "" ||
+      this.state.synopsis === "" ||
+      this.state.url === "" ||
+      this.state.date === ""
+    ) {
       window.alert("Please input a title, synopsis and url");
     } else {
       this.setState({ loadingStatus: true });
       const article = {
         title: this.state.title,
         synopsis: this.state.synopsis,
-        url: this.state.url
+        url: this.state.url,
+        date: this.state.date
       };
 
       // Create the news and redirect user to news list
-      NewsManager.post(article).then(() =>
-        this.props.history.push("/news")
-      );
+      NewsManager.post(article).then(() => this.props.history.push("/news"));
     }
   };
 
@@ -57,6 +62,14 @@ class NewsForm extends Component {
                 // The following id has to match EXACTLY to the parameter in state in order to work
                 id="title"
                 placeholder="News Title"
+              />
+              <label htmlFor="date">Article Date</label>
+              <input
+                type="date"
+                required
+                onChange={this.handleFieldChange}
+                id="date"
+                placeholder="Date"
               />
               <label htmlFor="synopsis">Synopsis</label>
               <input
