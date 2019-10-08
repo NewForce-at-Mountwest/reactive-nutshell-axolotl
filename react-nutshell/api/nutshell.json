@@ -136,5 +136,49 @@
       "cost": 500,
       "proceeds": 850
     }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "message": "whats up?????//",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "message": "helllo?////asdf",
+      "userId": 1
+    },
+    {
+      "message": "helllo?",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "message": "??",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "message": "",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "message": "helllo?",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "message": "hi",
+      "userId": 1,
+      "id": 7
+    }
+  ],
+  "friends": [
+    {
+      "otherId": 1,
+      "userId": 1,
+      "id": 2
+    }
   ]
 }
