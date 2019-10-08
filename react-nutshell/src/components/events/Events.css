@@ -2,7 +2,7 @@
     width: 35vw;
     margin: 1em
 }
-.section-content{
+.event-section-content{
     display: flex;
     align-content: center
 }
@@ -21,7 +21,7 @@
 .first-event{
     background-color:lightblue;
     width: 45vw;
-    height: 20vw;
+    height: 40vw;
    font-weight: bolder;
    font-size: 1.5em
     }

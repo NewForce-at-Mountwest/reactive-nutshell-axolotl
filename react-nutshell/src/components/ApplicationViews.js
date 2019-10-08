@@ -14,6 +14,8 @@ import Register from "./auth/Register"
 import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
+import EventReportBuild from "./eventReport/EventReport";
+
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("userId") !== null;
   render() {
@@ -113,7 +115,12 @@ class ApplicationViews extends Component {
             return <EventEditForm {...props} />;
           }}
         />
-        {/* <Route path="/login" component={Login} /> */}
+        <Route
+          path="/eventReport/report"
+          render={props => {
+            return <EventReportBuild {...props} />;
+          }}
+        />
       </React.Fragment>
     );
   }
