@@ -12,25 +12,31 @@ export default class ChatList extends Component {
     //update chat with inline edit
     updateChat = evt => {
         evt.preventDefault();
+        //if you press enter
         if (evt.keyCode === 13)
        { const editedChat = {
           id: this.state.chatToEdit.id,
           message: this.state.messageInput,
           userId: this.state.chatToEdit.userId
         };
+        //chat manager update function
         ChatManager.update(editedChat)
+        //gets all messages again
           .then(ChatManager.getAll)
+          //thens puts parsed info in messages
           .then(chats => {
             this.setState({
-              chats: chats,
+              messages: chats,
               chatToEdit: {}
             });
           });}
     };
+    //scrolls to bottom of chat messages
 	scrollToBottom = () => {
 		const chatDiv = document.getElementById('chat-messages');
 		chatDiv.scrollTop = chatDiv.scrollHeight;
-	};
+    };
+    //
 	handleFieldChange = (e) => {
 		const stateToChange = {};
 		stateToChange[e.target.id] = e.target.value;
@@ -47,7 +53,6 @@ export default class ChatList extends Component {
         )}
 	componentDidMount() {
         ChatManager.getAll().then(messagesFromDatabase => {
-            console.log(messagesFromDatabase);
             this.setState({
               messages: messagesFromDatabase
             });
