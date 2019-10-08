@@ -154,7 +154,7 @@
   "messages": [
     {
       "id": 1,
-      "message": "whats up?????",
+      "message": "whats up?????//",
       "userId": 1
     },
     {
@@ -181,6 +181,11 @@
       "message": "helllo?",
       "userId": 1,
       "id": 6
+    },
+    {
+      "message": "hi",
+      "userId": 1,
+      "id": 7
     }
   ],
   "friends": [

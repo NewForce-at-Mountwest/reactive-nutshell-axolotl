@@ -36,21 +36,24 @@ export default class ChatList extends Component {
 		const chatDiv = document.getElementById('chat-messages');
 		chatDiv.scrollTop = chatDiv.scrollHeight;
     };
-    //
+    //changes value and sets state to change
 	handleFieldChange = (e) => {
 		const stateToChange = {};
 		stateToChange[e.target.id] = e.target.value;
 		this.setState(stateToChange);
-	};
+    };
+    //message object to use and print to DOM
 	Message = (e) => {
 		e.preventDefault();
 		const item = {
 			message: this.state.messageInput,
             userId: +this.state.userId,
 
-		};
+        };
+        //posts new message item to json then gets all messages then sets state of the new message
 		ChatManager.post(item).then(ChatManager.getAll).then(newMsgs=> this.setState({messages: newMsgs})
         )}
+        //gets all messages and sets their state after coming back from database
 	componentDidMount() {
         ChatManager.getAll().then(messagesFromDatabase => {
             this.setState({
@@ -58,6 +61,7 @@ export default class ChatList extends Component {
             });
           })
     };
+    //changes chat message to input field
     ChangetoInput =(clickMessage)=> {
         this.setState({
             chatToEdit: clickMessage,
@@ -65,6 +69,7 @@ export default class ChatList extends Component {
         }
         )
     }
+    //renders everything to DOM
 	render() {
 		return (
 			<React.Fragment>
